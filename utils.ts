@@ -129,7 +129,7 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
     baños: 4,
     pileta: false,
     ubicacion:"",
-    habitaciones: 0,
+    habitaciones:4,
     camas: 20,
     seguridad: true,
     distanciadelcentro: 10,
