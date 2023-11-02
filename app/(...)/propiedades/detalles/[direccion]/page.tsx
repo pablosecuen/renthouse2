@@ -73,10 +73,10 @@ function Detalles({ params }: { params: { direccion: string } }) {
               caracteristicas y comodidades
               <span className="absolute left-72 right-0 bottom-2 -translate-y-1/2 transform border-b border-gray-300"></span>
             </h4>
-            <div className="justify-evenly items-center p-8 gap-4 w-full   flex flex-wrap ">
+            <div className="justify-start items-center p-8 gap-4 w-full   flex flex-wrap ">
               {caracteristicasVerdaderas.map((caracteristica) => (
-                <div key={caracteristica} className=" w-auto  flex  items-center ">
-                  <span className="flex gap-2 items-center justify-center">
+                <div key={caracteristica} className=" min-w-min  flex  items-center ">
+                  <span className="flex gap-2 items-center justify-center  px-4 py-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"

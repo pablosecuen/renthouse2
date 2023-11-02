@@ -55,21 +55,25 @@ function Login() {
                         Recuerdame
                       </label>
                     </div>
-                    <a
-                      href="#"
-                      className="text-sm text-center font-medium text-secondary hover:underline  pt-4 mx-auto "
-                    >
-                      Olvide mi contraseña
-                    </a>
                   </div>
                 </div>
               </div>
-              <button
-                type="submit"
-                className="w-full text-secondary  bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 cursor-pointer "
-              >
-                Ingresa
-              </button>
+              <div className="flex items-center py-4">
+                {" "}
+                <a
+                  href="#"
+                  className="text-sm w-1/2 text-center font-medium text-secondary hover:underline   "
+                >
+                  Olvide mi contraseña
+                </a>
+                <button
+                  type="submit"
+                  className="w-1/2 text-secondary hover:underline bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5  text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 cursor-pointer "
+                >
+                  Ingresa
+                </button>
+              </div>
+
               <p className="text-sm font-light text-gray-500 ">
                 Aún no tienes una cuenta?{" "}
                 <a href="#" className="font-medium text-secondary hover:underline ">
