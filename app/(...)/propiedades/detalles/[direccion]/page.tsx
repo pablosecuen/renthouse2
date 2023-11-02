@@ -105,7 +105,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
               {" "}
               <div className="w-full  bg-white border p-4   justify-center flex flex-col">
                 <h5>booking instantaneo</h5>
-                <BookingForm />
+                <BookingForm propiedad={propiedadEspecifica[0]} />
               </div>
             </div>
           </aside>

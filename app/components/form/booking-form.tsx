@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
 
-function BookingForm() {
+function BookingForm({ propiedad }: any) {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
   return (
     <div className="sticky flex flex-col gap-4">
       <div>
-        <p>$91 AVG/NIGHT</p>
+        <p>${propiedad.precio} X NOCHE</p>
         <p>ESTADIA MINIMA: 1 DIA</p>
       </div>
 
