@@ -21,7 +21,7 @@ function BookingForm() {
           <input className="w-1/2 text-right" type="date" id="checkOutDate" name="checkOutDate" />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
-          <label className="w-1/2">GUESTS</label>
+          <label className="w-1/2">Invitados</label>
           <input
             className="w-1/2 text-right"
             type="number"
@@ -31,15 +31,15 @@ function BookingForm() {
           />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
-          <label className="w-1/2">*EMAIL</label>
-          <input className="w-1/2 text-right" type="email" placeholder="Enter your email" />
+          <label className="w-1/2">EMAIL</label>
+          <input className="w-1/2 text-right" type="email" placeholder="Ingresa tu mail" />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
-          <label className="w-1/2">*NAME</label>
-          <input className="w-1/2 text-right" type="text" placeholder="Your name" />
+          <label className="w-1/2">NOMBRE</label>
+          <input className="w-1/2 text-right" type="text" placeholder="Tu nombre" />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
-          <label className="w-1/2">INSTANT BOOKING</label>
+          <label className="w-1/2">BOOKING INSTANTANEO</label>
           <input type="checkbox" />
         </div>
 
