@@ -2,7 +2,7 @@ import React from "react";
 
 function Filters() {
   return (
-    <div className="flex items-center gap-4 justify-between py-4">
+    <div className="flex items-center gap-4 justify-between py-4 w-full ">
       <div className="flex items-center gap-2">
         <button
           type="button"
