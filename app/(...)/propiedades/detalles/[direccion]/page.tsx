@@ -52,6 +52,14 @@ function Detalles({ params }: { params: { direccion: string } }) {
               </svg>
               {propiedadEspecifica[0].tipo}
             </span>
+            <iframe
+              width="800"
+              height="450"
+              src={propiedadEspecifica[0].video}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
             <p className="uppercase text-2xl font-extralight pb-10">
               {propiedadEspecifica[0].descripcion}
             </p>
