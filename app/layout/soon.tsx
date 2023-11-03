@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import foto from "@/public/assets/Rectangle 7.png";
-import Image from "next/image";
-import Link from "next/link";
 import Card from "../components/card";
+import CardContainer from "../components/card/card-container";
 function Soon() {
   return (
     <div className="flex flex-col w-screen items-center text-black py-24 gap-20 bg-[#f0f2f2] relative">
@@ -13,11 +11,7 @@ function Soon() {
         </svg>
       </div>
       <h2 className="text-center tracking-widest text-3xl">Disponible en fechas proximas</h2>
-      <div className="flex gap-8 z-20">
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      <CardContainer />
     </div>
   );
 }

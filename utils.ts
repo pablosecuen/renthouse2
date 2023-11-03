@@ -200,7 +200,7 @@ fechas: {
 },
 precioPorNoche: 0,
 imagenes: importImagesBvArgentino("BV ARGENTINO-", 67),
-video: "https://www.youtube.com/embed/dU_iqqkUAEc"
+video: ""
             }, 
           {direccion: "AV FRANCIA",
 tipo:"casa",
@@ -237,7 +237,7 @@ fechas: {
 },
 precioPorNoche: 0,
 imagenes: importImagesFrancia("Francia 1200-", 74, "jpg"),
-video: "https://www.youtube.com/embed/dU_iqqkUAEc"
+video: ""
             } ,
           {direccion: "QUEBRACHO",
 tipo:"casa",
@@ -277,6 +277,6 @@ fechas: {
 },
 precioPorNoche: 0,
 imagenes: importImagesFrancia("Quebracho-", 74, "jpg"),
-video: "https://www.youtube.com/embed/dU_iqqkUAEc"
+video: ""
             } 
   ]
