@@ -54,6 +54,8 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
               className="flex-shrink-0 overflow-hidden h-80 flex border  z-50"
             >
               <Image
+                width={600}
+                height={400}
                 src={image}
                 alt={`slide ${idx}`}
                 className="w-full h-auto !object-cover object-center contrast-90 brightness-95 mix-blend-color"

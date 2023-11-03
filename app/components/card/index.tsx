@@ -11,8 +11,8 @@ function Card({ propiedad, scale }: any) {
       <div className={scaleStyle}>
         <div className="max-h-72 rounded-b-3xl overflow-hidden">
           <Image
-            width={0}
-            height={0}
+            width={300}
+            height={200}
             className="rounded-t-lg w-full h-96 max-h-96"
             objectFit="cover"
             src={propiedad.imagenes[0]}

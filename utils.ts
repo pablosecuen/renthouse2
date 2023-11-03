@@ -1,41 +1,19 @@
 //iteracion de imagenes de summerhouse
-const importImagesSummerhouse = (prefix:any, totalImages:number) => {
-  const images = [];
-  for (let i = 1; i <= totalImages; i++) {
-    const img = require(`@/public/assets/summerhouse/DPD-${i.toString().padStart(2, '0')}.webp`);
-    images.push(img);
-  }
-  return images;
-};
-//iteracion de imagenes de bvargentino
-const importImagesBvArgentino = (prefix: string, totalImages: number, ): string[] => {
+// Iteración de imágenes genérica
+const importImages = (folder: string, prefix: string, totalImages: number, extension = 'webp'): string[] => {
   const images: string[] = [];
   for (let i = 1; i <= totalImages; i++) {
-    const img = require(`@/public/assets/argentino/DPD - BV ARGENTINO-${i.toString().padStart(2, '0')}.webp`);
+    const img = `/assets/${folder}/${prefix}-${i.toString().padStart(2, '0')}.${extension}`;
     images.push(img);
   }
   return images;
 };
 
-//iteracion de imagenes de francia
-
- const importImagesFrancia = (prefix: string, totalImages: number, extension: string): string[] => {
-  const images: string[] = [];
-  for (let i = 1; i <= totalImages; i++) {
-    const img = require(`@/public/assets/francia/DPD - FRANCIA 1200-${i.toString().padStart(2, '0')}.webp`);
-    images.push(img);
-  }
-  return images;
-}; 
-//iteracion de imagenes de quebracho
-const importImagesQuebracho = (prefix: string, totalImages: number, extension: string): string[] => {
-  const images: string[] = [];
-  for (let i = 1; i <= totalImages; i++) {
-    const img = require(`@/public/assets/quebracho/DPD - QUEBRACHO-${i.toString().padStart(2, '0')}.${extension}`);
-    images.push(img);
-  }
-  return images;
-}; 
+// Llamadas a la función con parámetros específicos para cada tipo de propiedad
+const importImagesSummerhouse = (totalImages: number) => importImages('summerhouse', 'DPD', totalImages);
+const importImagesBvArgentino = (totalImages: number) => importImages('argentino', 'DPD - BV ARGENTINO', totalImages);
+const importImagesFrancia = (totalImages: number) => importImages('francia', 'DPD - FRANCIA 1200', totalImages);
+const importImagesQuebracho = (totalImages: number, extension: string) => importImages('quebracho', 'DPD - QUEBRACHO', totalImages, extension);
 
 
 export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
@@ -79,6 +57,7 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
   };
 
   export default handleNavItemClick;
+
 
 
   export const tabs = [
@@ -164,7 +143,7 @@ export const propiedades = [
       ocupadas: [], 
     },
     precioPorNoche: 0,
-    imagenes: importImagesSummerhouse("@/public/assets/summerhouse/DPD-", 23),
+    imagenes: importImagesSummerhouse(23),
     video: "https://www.youtube.com/embed/dU_iqqkUAEc"
             }, 
           {direccion: " BV. ARGENTINO",
@@ -197,7 +176,7 @@ fechas: {
   ocupadas: [], 
 },
 precioPorNoche: 0,
-imagenes: importImagesBvArgentino("BV ARGENTINO-", 67),
+imagenes: importImagesBvArgentino(67),
 video: ""
             }, 
           {direccion: "AV FRANCIA",
@@ -234,7 +213,7 @@ fechas: {
   ocupadas: [], 
 },
 precioPorNoche: 0,
-imagenes: importImagesFrancia("Francia 1200-", 72, "webp"),
+imagenes: importImagesFrancia(72),
 video: ""
             } ,
           {direccion: "QUEBRACHO",
@@ -274,7 +253,7 @@ fechas: {
   ocupadas: [], 
 },
 precioPorNoche: 0,
-imagenes: importImagesQuebracho("QUEBRACHO-", 52, "webp"),
+imagenes: importImagesQuebracho(52, 'webp'),
 video: ""
             } 
   ]
