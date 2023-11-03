@@ -7,7 +7,7 @@ import React from "react";
 function Propiedades() {
   return (
     <div className="min-h-screen pt-24  flex justify-center px-8">
-      <div className=" w-1/2 flex flex-wrap py-20">
+      <div className=" w-1/2 flex flex-wrap ">
         <nav className="flex flex-col w-full">
           <h2 className="tracking-widest py-8 text-xl font-semibold ">PROPIEDADES</h2>
           <SearchForm />
@@ -15,7 +15,10 @@ function Propiedades() {
             <Filters />
           </div>
         </nav>
-        <CardContainer />
+        <div className="py-10">
+          {" "}
+          <CardContainer />
+        </div>
       </div>
       <aside className="w-1/2 flex items-center justify-center"> aca va el mapa</aside>
     </div>
