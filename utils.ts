@@ -27,8 +27,7 @@ const importImagesBvArgentino = (prefix: string, totalImages: number, ): string[
   return images;
 }; 
 
-const importImagesQuebracho
- = (prefix: string, totalImages: number, extension: string): string[] => {
+const importImagesQuebracho = (prefix: string, totalImages: number, extension: string): string[] => {
   const images: string[] = [];
   for (let i = 1; i <= totalImages; i++) {
     const img = require(`@/public/assets/quebracho/DPD - QUEBRACHO-${i.toString().padStart(2, '0')}.${extension}`);
@@ -236,7 +235,7 @@ fechas: {
   ocupadas: [], 
 },
 precioPorNoche: 0,
-imagenes: importImagesFrancia("Francia 1200-", 74, "jpg"),
+imagenes: importImagesFrancia("Francia 1200-", 72, "webp"),
 video: ""
             } ,
           {direccion: "QUEBRACHO",
@@ -276,7 +275,7 @@ fechas: {
   ocupadas: [], 
 },
 precioPorNoche: 0,
-imagenes: importImagesFrancia("Quebracho-", 74, "jpg"),
+imagenes: importImagesQuebracho("QUEBRACHO-", 52, "webp"),
 video: ""
             } 
   ]
