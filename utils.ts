@@ -21,7 +21,7 @@ const importImagesBvArgentino = (prefix: string, totalImages: number, ): string[
  const importImagesFrancia = (prefix: string, totalImages: number, extension: string): string[] => {
   const images: string[] = [];
   for (let i = 1; i <= totalImages; i++) {
-    const img = require(`@/public/assets/francia/DPD - FRANCIA 1200-${i.toString().padStart(2, '0')}.${extension}`);
+    const img = require(`@/public/assets/francia/DPD - FRANCIA 1200-${i.toString().padStart(2, '0')}.webp`);
     images.push(img);
   }
   return images;
