@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import button from "@/public/assets/exit/buttonExit.svg";
 import handleNavItemClick from "@/utils";
 import Modal from "../modals/sign-in";

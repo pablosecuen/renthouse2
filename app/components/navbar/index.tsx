@@ -7,7 +7,7 @@ import NavbarMenu from "./menu-mobile";
 import ButtonSignIn from "../buttons/sign-in";
 import Logo from "@/public/assets/logo";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { signIn, useSession, signOut } from "next-auth/react";
 
 const Navbar: React.FC = () => {
@@ -16,7 +16,6 @@ const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
-
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen(!isMenuOpen);
@@ -78,18 +77,18 @@ const Navbar: React.FC = () => {
               onMouseEnter={handleHover}
               ref={menuRef}
             >
-              <div className="w-12">
+              <div className="w-12 flex items-center">
                 <Image
                   alt="User profile image"
-                  width={100}
-                  height={100}
+                  width={50}
+                  height={50}
                   objectFit="cover"
                   layout="fixed"
-                  quality={100}
+                  quality={50}
                   placeholder="blur"
                   blurDataURL={session.user.image || ""}
                   src={session.user.image || ""}
-                  className="w-10 h-10 rounded-full cursor-pointer"
+                  className="w-10 h-full rounded-full cursor-pointer"
                 />
                 {showMenu && (
                   <div className="absolute top-12 right-0 bg-white border border-gray-200 rounded-lg shadow-md p-4 ">
