@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import UseAnimations from "react-useanimations";
 import menu2 from "react-useanimations/lib/menu2";
 import NavnarMenuDesktop from "./menu-desktop";
@@ -14,6 +14,7 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
 
   const toggleMenu = useCallback(() => {
@@ -32,7 +33,11 @@ const Navbar: React.FC = () => {
       document.addEventListener("keydown", handleEscapeKey);
     }
 
+    // Agregar el evento al documento
+    document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEscapeKey);
     };
   }, [isMenuOpen, toggleMenu]);
@@ -41,8 +46,11 @@ const Navbar: React.FC = () => {
     setShowMenu(true);
   };
 
-  const handleLeave = () => {
-    setShowMenu(false);
+  // Función para cerrar el menú si se hace clic fuera
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setShowMenu(false);
+    }
   };
 
   return (
@@ -67,7 +75,7 @@ const Navbar: React.FC = () => {
             <div
               className="flex relative gap-x-2 items-center"
               onMouseEnter={handleHover}
-              onMouseLeave={handleLeave}
+              ref={menuRef}
             >
               <div className="w-12">
                 <Image
