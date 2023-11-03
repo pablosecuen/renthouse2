@@ -1,3 +1,4 @@
+//iteracion de imagenes de summerhouse
 const importImagesSummerhouse = (prefix:any, totalImages:number) => {
   const images = [];
   for (let i = 1; i <= totalImages; i++) {
@@ -6,17 +7,17 @@ const importImagesSummerhouse = (prefix:any, totalImages:number) => {
   }
   return images;
 };
-
+//iteracion de imagenes de bvargentino
 const importImagesBvArgentino = (prefix: string, totalImages: number, ): string[] => {
   const images: string[] = [];
   for (let i = 1; i <= totalImages; i++) {
-    const img = require(`@/public/assets/argentino/DPD - BV ARGENTINO-${i.toString().padStart(2, '0')}.jpg`);
+    const img = require(`@/public/assets/argentino/DPD - BV ARGENTINO-${i.toString().padStart(2, '0')}.webp`);
     images.push(img);
   }
   return images;
 };
 
-
+//iteracion de imagenes de francia
 
  const importImagesFrancia = (prefix: string, totalImages: number, extension: string): string[] => {
   const images: string[] = [];
@@ -26,7 +27,7 @@ const importImagesBvArgentino = (prefix: string, totalImages: number, ): string[
   }
   return images;
 }; 
-
+//iteracion de imagenes de quebracho
 const importImagesQuebracho = (prefix: string, totalImages: number, extension: string): string[] => {
   const images: string[] = [];
   for (let i = 1; i <= totalImages; i++) {
@@ -35,8 +36,6 @@ const importImagesQuebracho = (prefix: string, totalImages: number, extension: s
   }
   return images;
 }; 
-
-
 
 
 export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
