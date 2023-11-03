@@ -1,3 +1,4 @@
+
 import Login from "./login-form";
 
 export interface ModalProps {
@@ -14,10 +15,13 @@ export default function Modal({ onClose }: ModalProps) {
           Cerrar
         </button>
         <Login />
+
         <div
           className="fixed -z-10 min-h-screen  w-screen  top-0 left-0 bg-black/20"
           onClick={onClose}
-        ></div>
+        >
+          G
+        </div>
       </div>
     </div>
   );

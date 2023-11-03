@@ -16,7 +16,7 @@ function ButtonSignIn() {
   };
 
   return (
-    <div className="w-24 sm:block">
+    <div className="w-24 sm:block cursor-pointer">
       <Image src={button} alt="boton" width={150} height={150} onClick={handleButtonClick} />
       {isModalOpen && (
         <>

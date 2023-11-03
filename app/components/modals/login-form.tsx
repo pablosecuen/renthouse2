@@ -1,8 +1,17 @@
 import React from "react";
-
 import Logo from "@/public/assets/logo";
+import GoogleButtonLogin from "../buttons/google-button";
 
 function Login() {
+  const openLoginModal = () => {
+    // Guardar la URL actual antes de abrir el modal de inicio de sesión
+    const currentURL = window.location.href;
+    localStorage.setItem("previousURL", currentURL);
+
+    // Lógica para abrir el modal de inicio de sesión
+    // ...
+  };
+
   return (
     <section className="bg-primary !z-50  bg-gray-200 rounded-xl md:h-full">
       <div className="flex flex-col z-20 items-center justify-center px-6 py-8 mx-auto md:h-full ">
@@ -73,7 +82,7 @@ function Login() {
                   Ingresa
                 </button>
               </div>
-
+              <GoogleButtonLogin />
               <p className="text-sm font-light text-gray-500 ">
                 Aún no tienes una cuenta?{" "}
                 <a href="#" className="font-medium text-secondary hover:underline ">
