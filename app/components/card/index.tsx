@@ -7,7 +7,7 @@ import SizeDescription from "./size-description";
 function Card({ propiedad }: any) {
   return (
     <article>
-      <div className="md:w-[420px] flex flex-col w-96 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/20 scale-75 ">
+      <div className="md:w-[420px] flex flex-col w-96 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/20 scale-75 md:scale-100">
         <div className="max-h-72 rounded-b-3xl overflow-hidden">
           <Image
             width={0}

@@ -7,7 +7,7 @@ import React from "react";
 function Propiedades() {
   return (
     <div className="min-h-screen pt-24  flex justify-center px-8">
-      <div className=" w-1/2 flex flex-wrap">
+      <div className=" w-1/2 flex flex-wrap py-20">
         <nav className="flex flex-col w-full">
           <h2 className="tracking-widest py-8 text-xl font-semibold ">PROPIEDADES</h2>
           <SearchForm />
