@@ -1,26 +1,41 @@
-import img1 from "@/public/assets/summerhouse/DPD-01.webp"
-import img2 from "@/public/assets/summerhouse/DPD-02.webp"
-import img3 from "@/public/assets/summerhouse/DPD-03.webp"
-import img4 from "@/public/assets/summerhouse/DPD-04.webp"
-import img5 from "@/public/assets/summerhouse/DPD-05.webp"
-import img6 from "@/public/assets/summerhouse/DPD-06.webp"
-import img7 from "@/public/assets/summerhouse/DPD-07.webp"
-import img8 from "@/public/assets/summerhouse/DPD-08.webp"
-import img9 from "@/public/assets/summerhouse/DPD-09.webp"
-import img10 from "@/public/assets/summerhouse/DPD-10.webp"
-import img11 from "@/public/assets/summerhouse/DPD-11.webp"
-import img12 from "@/public/assets/summerhouse/DPD-12.webp"
-import img13 from "@/public/assets/summerhouse/DPD-13.webp"
-import img14 from "@/public/assets/summerhouse/DPD-14.webp"
-import img15 from "@/public/assets/summerhouse/DPD-15.webp"
-import img16 from "@/public/assets/summerhouse/DPD-16.webp"
-import img17 from "@/public/assets/summerhouse/DPD-17.webp"
-import img18 from "@/public/assets/summerhouse/DPD-18.webp"
-import img19 from "@/public/assets/summerhouse/DPD-19.webp"
-import img20 from "@/public/assets/summerhouse/DPD-20.webp"
-import img21 from "@/public/assets/summerhouse/DPD-21.webp"
-import img22 from "@/public/assets/summerhouse/DPD-22.webp"
-import img23 from "@/public/assets/summerhouse/DPD-23.webp"
+const importImagesSummerhouse = (prefix:any, totalImages:number) => {
+  const images = [];
+  for (let i = 1; i <= totalImages; i++) {
+    const img = require(`@/public/assets/summerhouse/DPD-${i.toString().padStart(2, '0')}.webp`);
+    images.push(img);
+  }
+  return images;
+};
+
+const importImagesBvArgentino = (prefix: string, totalImages: number, ): string[] => {
+  const images: string[] = [];
+  for (let i = 1; i <= totalImages; i++) {
+    const img = require(`@/public/assets/argentino/DPD - BV ARGENTINO-${i.toString().padStart(2, '0')}.jpg`);
+    images.push(img);
+  }
+  return images;
+};
+
+
+
+ const importImagesFrancia = (prefix: string, totalImages: number, extension: string): string[] => {
+  const images: string[] = [];
+  for (let i = 1; i <= totalImages; i++) {
+    const img = require(`@/public/assets/francia/DPD - FRANCIA 1200-${i.toString().padStart(2, '0')}.${extension}`);
+    images.push(img);
+  }
+  return images;
+}; 
+
+const importImagesQuebracho
+ = (prefix: string, totalImages: number, extension: string): string[] => {
+  const images: string[] = [];
+  for (let i = 1; i <= totalImages; i++) {
+    const img = require(`@/public/assets/quebracho/DPD - QUEBRACHO-${i.toString().padStart(2, '0')}.${extension}`);
+    images.push(img);
+  }
+  return images;
+}; 
 
 
 
@@ -121,8 +136,8 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
     }
   ]
   
-  export const propiedades = [
-    {direccion: "AVENIDA NEWBERY 9200 FISHERTON",
+export const propiedades = [
+          {direccion: "AVENIDA NEWBERY 9200 FISHERTON",
     tipo:"casa",
     descripcion:"Alquiler temporario una lujosa casa quinta en Fisherton, Rosario, ubicada a menos de 7 km del centro de la ciudad.    La propiedad cuenta con un terreno de 3.000 m2 de espacios    verdes totalmente parquizados, con muebles a tono para    disfrutar al aire libre.    La casa cuenta con aire acondicionado en todos sus ambientes    y una zona de parrillero con vajilla completa. Además, cuenta    con 20 camas y baños equipados para alojar cómodamente a 20    personas.    Cuenta con una galería techada, parrilla cubierta y fogonero    en el exterior. La casa incluye ropa de cama y el servicio de    limpieza y de piscina para mayor comodidad de los huéspedes.    Seguridad privada las 24 horas.",
     huespedes:20,
@@ -151,7 +166,117 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
       ocupadas: [], 
     },
     precioPorNoche: 0,
-    imagenes: [img1,img2,img3,img4,img5,img6, img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23],
+    imagenes: importImagesSummerhouse("@/public/assets/summerhouse/DPD-", 23),
     video: "https://www.youtube.com/embed/dU_iqqkUAEc"
-}
+            }, 
+          {direccion: " BV. ARGENTINO",
+tipo:"casa",
+descripcion:"Se ofrece en alquiler temporario una propiedad ubicada en el exclusivo barrio de Fisherton, a solo 7 km del centro de la ciudad de Rosario. La casa cuenta con un terreno de 3.000 m2 y un frente de 40 m2, brindando amplios espacios verdes para disfrutar al aire libre. La propiedad cuenta con seguridad privada, 5 habitaciones y 4 baños equipados para brindar una estadía confortable y placentera. Además, dispone de una piscina para los días cálidos, conexión a internet wifi y un Smart TV con Pack futbol para aquellos que disfrutan del futbol. La propiedad también cuenta con un portón corredizo y un quincho cerrado para disfrutar de asados y reuniones familiares o con amigos. La casa incluye ropa de cama y toallas para mayor comodidad de los huéspedes. Se solicita un uso responsable y exigente de la propiedad para mantenerla en excelentes condiciones.", 
+huespedes:20,
+baños: 4,
+ubicacion:"",
+habitaciones:5,
+camas: 20,
+seguridad: true,
+distanciadelcentro: 7,
+caracteristicas: {
+  aire: true,
+  menores: true,
+  mascotas: true,
+  fumadores: true,
+  balcon: true,
+  bañera: true,
+  cafetera: true,
+  pileta: true,
+  parrilla: true,
+  wifi: true,
+  estacionamiento: true,
+  "tv led":true,
+ "pack futbol": true,
+  },
+fechas: {
+  libres: [], 
+  ocupadas: [], 
+},
+precioPorNoche: 0,
+imagenes: importImagesBvArgentino("BV ARGENTINO-", 67),
+video: "https://www.youtube.com/embed/dU_iqqkUAEc"
+            }, 
+          {direccion: "AV FRANCIA",
+tipo:"casa",
+descripcion:"casa de 3 pisos ubicada en el centro de la ciudad, rodeada de zonas de bares y restaurantes. Cuenta con un amplio quincho con parrilla, aire acondicionado y vajilla para 20/25 personas. Además, dispone de una gran piscina y cochera techada para 4 autos con portón eléctrico. La propiedad cuenta con un jardín de 600 m2 y espacios verdes para disfrutar al aire libre. La casa incluye 5 habitaciones, 6 baños y cocina amplia con varias heladeras, microondas, cafetera, aire acondicionado, ostadoras y ollas. Asimismo, cuenta con ropa de cama y servicio de limpieza de casa y de piscina incluidos durante los fines de semana. También dispone de wi-fi, smart TV  con pack futbol y un quincho abierto para mayor comodidad.", 
+huespedes:20,
+baños: 6,
+ubicacion:"",
+habitaciones:5,
+camas: 20,
+seguridad: true,
+distanciadelcentro: 7,
+caracteristicas: {
+  vajilla:true,
+  aire: true,
+  menores: true,
+  mascotas: true,
+  fumadores: true,
+  balcon: true,
+  bañera: true,
+  cafetera: true,
+  microondas:true,
+  "ropa de cama": true,
+  pileta: true,
+  parrilla: true,
+  wifi: true,
+  estacionamiento: true,
+  "porton electrico": true,
+  "tv led":true,
+ "pack futbol": false,
+  },
+fechas: {
+  libres: [], 
+  ocupadas: [], 
+},
+precioPorNoche: 0,
+imagenes: importImagesFrancia("Francia 1200-", 74, "jpg"),
+video: "https://www.youtube.com/embed/dU_iqqkUAEc"
+            } ,
+          {direccion: "QUEBRACHO",
+tipo:"casa",
+descripcion:"Hermosa casa con quincho cerrado equipado con parrilla, aire acondicionado y vajilla para 20/25 personas. La propiedad también cuenta con una piscina iluminada, galería techada con espacio para 5 autos, portón eléctrico, fogonero y ropa de cama incluida. En el interior de la casa, hay 4 habitaciones, 3 baños y una cocina amplia con heladera. Además, la casa está completamente amoblada y equipada con wi-fi, Smart TV con pack futbol, microondas, cafetera, tostadoras, ollas y aire acondicionado.", 
+huespedes:18,
+baños: 3,
+ubicacion:"",
+habitaciones:4,
+camas: 18,
+seguridad: true,
+distanciadelcentro: 7,
+caracteristicas: {
+  vajilla:true,
+  ollas: true,
+  aire: true,
+  menores: true,
+  mascotas: true,
+  fumadores: true,
+  balcon: true,
+  bañera: true,
+  cafetera: true,
+  microondas:true,
+  tostadora: true,
+  "ropa de cama": true,
+  pileta: true,
+  parrilla: true,
+  wifi: true,
+  estacionamiento: true,
+  "porton electrico": true,
+  "tv led":true,
+ "pack futbol": false,
+ fogonero: true,
+  },
+fechas: {
+  libres: [], 
+  ocupadas: [], 
+},
+precioPorNoche: 0,
+imagenes: importImagesFrancia("Quebracho-", 74, "jpg"),
+video: "https://www.youtube.com/embed/dU_iqqkUAEc"
+            } 
   ]

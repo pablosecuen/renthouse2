@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
 
+
   const toggleMenu = useCallback(() => {
     setIsMenuOpen(!isMenuOpen);
     setShowMenu(!showMenu);
