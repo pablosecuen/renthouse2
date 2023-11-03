@@ -12,7 +12,7 @@ function Soon() {
       </div>
       <h2 className="text-center tracking-widest text-3xl">Disponible en fechas proximas</h2>
 
-      <CardContainer />
+      <CardContainer scale={90} />
     </div>
   );
 }

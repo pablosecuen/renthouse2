@@ -3,16 +3,16 @@ import Card from ".";
 import { propiedades } from "@/utils";
 import SizeDescription from "./size-description";
 import Link from "next/link";
-function CardContainer() {
+function CardContainer({ scale }: any) {
   return (
-    <div className="flex gap-8 z-20 w-full justify-evenly flex-wrap">
+    <div className="flex gap-4 w-full  justify-evenly flex-wrap">
       {propiedades.map((propiedad, index) => (
         <Link
           key={index}
           href={`/propiedades/detalles/${propiedad.direccion.toLowerCase()}`}
-          className=""
+          className="w-auto "
         >
-          <Card propiedad={propiedad} />
+          <Card propiedad={propiedad} scale={scale} />
         </Link>
       ))}
     </div>

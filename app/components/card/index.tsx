@@ -4,10 +4,11 @@ import React from "react";
 import { propiedades } from "@/utils";
 import SizeDescription from "./size-description";
 
-function Card({ propiedad }: any) {
+function Card({ propiedad, scale }: any) {
+  const scaleStyle = `md:w-[420px] flex flex-col w-96  bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/20 md:scale-${scale} scale-75`;
   return (
     <article>
-      <div className="md:w-[420px] flex flex-col w-96 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/20 scale-75 md:scale-100">
+      <div className={scaleStyle}>
         <div className="max-h-72 rounded-b-3xl overflow-hidden">
           <Image
             width={0}
@@ -49,7 +50,7 @@ function Card({ propiedad }: any) {
             </svg>
           </div>
         </div>
-        <SizeDescription propiedad={propiedad} size="md" />
+        <SizeDescription propiedad={propiedad} size="lg" />
       </div>
     </article>
   );

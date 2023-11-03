@@ -39,7 +39,7 @@ function SizeDescription({ propiedad, size }: any) {
     }
   };
   return (
-    <div className="flex w-full justify-around  p-2 items-center h-10">
+    <div className="flex w-full justify-around  p-2 py-8 items-center h-10">
       <div className="flex gap-3 items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

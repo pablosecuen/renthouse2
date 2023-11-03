@@ -17,7 +17,7 @@ function Propiedades() {
         </nav>
         <div className="py-10">
           {" "}
-          <CardContainer />
+          <CardContainer scale={80} />
         </div>
       </div>
       <aside className="w-1/2 flex items-center justify-center"> aca va el mapa</aside>
