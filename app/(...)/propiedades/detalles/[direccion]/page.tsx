@@ -37,10 +37,12 @@ function Detalles({ params }: { params: { direccion: string } }) {
             TODAS LAS PROPIEDADES
           </Link>
         </nav>
-        <div className="w-full flex gap-4">
-          <article className="my-10 flex flex-col gap-4 w-2/3">
-            <h3 className="text-3xl tracking-widest">{propiedadEspecifica[0].direccion}</h3>
-            <span className="flex items-center">
+        <div className="w-full flex flex-col md:flex-row gap-4">
+          <article className="my-10 flex flex-col gap-4 md:w-2/3 w-full">
+            <h3 className="text-3xl tracking-widest px-4 md:px-0">
+              {propiedadEspecifica[0].direccion}
+            </h3>
+            <span className="flex items-center px-4 md:px-0">
               <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fill="none"
@@ -52,21 +54,24 @@ function Detalles({ params }: { params: { direccion: string } }) {
               </svg>
               {propiedadEspecifica[0].tipo}
             </span>
-            {propiedadEspecifica[0].video.length > 1 && (
-              <iframe
-                width="800"
-                height="450"
-                src={propiedadEspecifica[0].video}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            )}
 
-            <p className="uppercase text-2xl font-extralight pb-10">
+            <p className="uppercase md:text-2xl font-extralight pb-10 p-4 md:p-0">
               {propiedadEspecifica[0].descripcion}
             </p>
             <SizeDescription propiedad={propiedadEspecifica[0]} size="2xl" />
+            <div className="w-full  overflow-x-hidden">
+              {propiedadEspecifica[0].video.length > 1 && (
+                <iframe
+                  width="800"
+                  height="450"
+                  className=" top-0 left-0 w-full h-52 md:h-[450px]"
+                  src={propiedadEspecifica[0].video}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              )}
+            </div>
             <div className="w-full overflow-hidden py-8">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3349.5547132269194!2d-60.76588570390425!3d-32.909939508332506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1698937243863!5m2!1ses!2sar"
@@ -76,10 +81,10 @@ function Detalles({ params }: { params: { direccion: string } }) {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full"
+                className="w-full "
               ></iframe>
             </div>
-            <h4 className="relative bg-white">
+            <h4 className="relative bg-white px-4">
               {" "}
               caracteristicas y comodidades
               <span className="absolute left-72 right-0 bottom-2 -translate-y-1/2 transform border-b border-gray-300"></span>
@@ -102,14 +107,14 @@ function Detalles({ params }: { params: { direccion: string } }) {
               ))}
             </div>
 
-            <h4 className="relative bg-white">
+            <h4 className="relative bg-white  px-4">
               {" "}
               tarifa y disponibilidad
               <span className="absolute left-72 right-0 bottom-2 -translate-y-1/2 transform border-b border-gray-300"></span>
             </h4>
           </article>
           <aside
-            className="w-1/3 
+            className="md:w-1/3 pb-10 md:pb-0
            "
           >
             <div className="sticky top-20 h-full overflow-y-auto">
