@@ -39,11 +39,17 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   return (
     <div className="relative w-full mx-auto h-80 " ref={carouselRef}>
-      <div className="overflow-hidden rounded-lg">
+      <div
+        className="overflow-x-auto md:overflow-hidden rounded-lg"
+        style={{
+          touchAction: "pan-x",
+          scrollbarWidth: "none",
+        }}
+      >
         <div
           className="flex transition-transform ease-in-out duration-500 gap-4"
           style={{
-            transform: `translateX(-${index * (550 / imageCount)}%)`,
+            transform: `translateX(-${index * (1000 / imageCount)}%)`,
             width: `${imageCount * (100 / imageCount)}%`,
           }}
         >
@@ -51,7 +57,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             <div
               key={idx}
               style={{ width: `${150 / imagesInView}%` }}
-              className="flex-shrink-0 overflow-hidden h-80 flex border  z-50"
+              className="flex-shrink-0  h-80 flex border  z-50"
             >
               <Image
                 width={600}
