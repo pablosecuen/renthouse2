@@ -4,28 +4,24 @@ import React from "react";
 import { propiedades } from "@/utils";
 import SizeDescription from "./size-description";
 
-function Card({ propiedad, scale }: any) {
-  const scaleStyle = `md:w-[420px] flex flex-col w-96 -mb-16 md-mb-0 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/20 md:scale-${scale} scale-75`;
+function Card({ propiedad }: any) {
   return (
-    <article>
-      <div className={scaleStyle}>
-        <Link
-          href={`/propiedades/detalles/${propiedad.direccion.toLowerCase()}`}
-          className="w-auto "
-        >
-          <div className="max-h-72 rounded-b-3xl overflow-hidden">
+    <article className="border  h-auto md:w-96 md:h-[600px] bg-white shadow-black/20 shadow-md ">
+      <div>
+        <Link href={`/propiedades/detalles/${propiedad.direccion.toLowerCase()}`} className="">
+          <div className="">
             <Image
               width={500}
               height={400}
-              className="rounded-t-lg w-full h-96 max-h-96"
+              className=" w-full h-full rounded-b-3xl"
               objectFit="cover"
               src={propiedad.imagenes[0]}
               alt=""
             />
           </div>
 
-          <div className="p-5 h-60 relative">
-            <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+          <div className="p-5 h-full  ">
+            <h3 className="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 ">
               {propiedad.direccion}
             </h3>
 
@@ -35,7 +31,7 @@ function Card({ propiedad, scale }: any) {
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
               {propiedad.descripcion.slice(0, 100)}...
             </p>
-            <div className="inline-flex absolute bottom-0 items-center px-3 py-2 text-sm font-medium text-center text-black/80 bg-[#a1d1cf] rounded-lg hover:bg-blue-300 transition duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-[#a1d1cf]dark:hover:bg-blue-700 dark:focus:ring-blue-500">
+            <div className="inline-flex cursor-pointer items-center px-3 py-2 mt-2 text-sm font-medium text-center text-black/80 bg-[#a1d1cf] rounded-lg hover:bg-blue-300 transition duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-[#a1d1cf]dark:hover:bg-blue-700 dark:focus:ring-blue-500">
               Consultar
               <svg
                 className="w-3.5 h-3.5 ml-2"

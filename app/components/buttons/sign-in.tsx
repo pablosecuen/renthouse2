@@ -4,20 +4,26 @@ import button from "@/public/assets/exit/buttonExit.svg";
 import Image from "next/legacy/image";
 import Modal from "../modals/sign-in";
 
-function ButtonSignIn() {
+interface ButtonSignInProps extends React.HTMLAttributes<HTMLDivElement> {
+  handleOpenModal?: () => void;
+}
+function ButtonSignIn({ handleOpenModal }: ButtonSignInProps) {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-  const handleButtonClick = () => {
-    setIsModalOpen(true);
-  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
   return (
-    <div className="w-24 sm:block cursor-pointer">
-      <Image src={button} alt="boton" width={150} height={150} onClick={handleButtonClick} />
+    <div className="w-24 h-auto md:block cursor-pointer ">
+      <Image
+        src={button}
+        alt="boton"
+        width={150}
+        height={100}
+        onClick={handleOpenModal}
+        className="border h-auto"
+      />
       {isModalOpen && (
         <>
           <Modal onClose={handleCloseModal} />

@@ -1,24 +1,23 @@
 import React from "react";
 import Logo from "@/public/assets/logo";
 import GoogleButtonLogin from "../buttons/google-button";
-
-function Login() {
-  const openLoginModal = () => {
-    // Guardar la URL actual antes de abrir el modal de inicio de sesión
-    const currentURL = window.location.href;
-    localStorage.setItem("previousURL", currentURL);
-
-    // Lógica para abrir el modal de inicio de sesión
-    // ...
-  };
-
+export interface ModalProps {
+  onClose: () => void;
+}
+function Login({ onClose }: ModalProps) {
   return (
-    <section className="bg-primary !z-50  bg-gray-200 rounded-xl md:h-full">
-      <div className="flex flex-col z-20 items-center justify-center px-6 py-8 mx-auto md:h-full ">
+    <section className="bg-primary  md:w-[450px] w-[350px] bg-gray-200 rounded-xl md:h-full ">
+      <div className="flex flex-col z-20 items-center justify-center md:px-6 px-1 py-4 md:py-8 mx-auto md:h-full ">
+        <button
+          onClick={onClose}
+          className="px-4  mr-2 mt-2 text-sm right-0 ml-auto py-2 bg-gray-600 text-white rounded"
+        >
+          Cerrar
+        </button>
         <a href="https://localhost:3000" className=" mb-6">
           <Logo size="md" />
         </a>
-        <div className="w-96 bg-primary rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0 bg-gray-300 ">
+        <div className=" bg-primary w-full rounded-lg shadow border md:mt-0  xl:p-0 bg-gray-300 ">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
               Ingresa con tu cuenta

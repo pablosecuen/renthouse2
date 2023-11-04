@@ -6,8 +6,8 @@ import React from "react";
 
 function Propiedades() {
   return (
-    <div className="min-h-screen pt-24  flex justify-center px-8">
-      <div className=" w-1/2 flex flex-wrap ">
+    <div className="min-h-screen h-full pt-24 flex-col md:flex-row flex justify-center px-8">
+      <div className=" md:w-1/2 flex flex-wrap ">
         <nav className="flex flex-col w-full">
           <h2 className="tracking-widest py-8 text-xl font-semibold ">PROPIEDADES</h2>
           <SearchForm />
@@ -20,7 +20,7 @@ function Propiedades() {
           <CardContainer scale={80} />
         </div>
       </div>
-      <aside className="w-1/2 flex items-center justify-center"> aca va el mapa</aside>
+      <aside className="md:w-1/2 md:flex items-center justify-center hidden"> aca va el mapa</aside>
     </div>
   );
 }

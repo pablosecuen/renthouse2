@@ -114,7 +114,7 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
   ]
   
 export const propiedades = [
-          {direccion: "AVENIDA NEWBERY 9200 FISHERTON",
+          {direccion: "AV NEWBERY FISHERTON",
     tipo:"casa",
     descripcion:"Alquiler temporario una lujosa casa quinta en Fisherton, Rosario, ubicada a menos de 7 km del centro de la ciudad.    La propiedad cuenta con un terreno de 3.000 m2 de espacios    verdes totalmente parquizados, con muebles a tono para    disfrutar al aire libre.    La casa cuenta con aire acondicionado en todos sus ambientes    y una zona de parrillero con vajilla completa. Además, cuenta    con 20 camas y baños equipados para alojar cómodamente a 20    personas.    Cuenta con una galería techada, parrilla cubierta y fogonero    en el exterior. La casa incluye ropa de cama y el servicio de    limpieza y de piscina para mayor comodidad de los huéspedes.    Seguridad privada las 24 horas.",
     huespedes:20,

@@ -9,6 +9,7 @@ import Logo from "@/public/assets/logo";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import { signIn, useSession, signOut } from "next-auth/react";
+import Modal from "../modals/sign-in";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -45,6 +46,13 @@ const Navbar: React.FC = () => {
   const handleHover = () => {
     setShowMenu(true);
   };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
 
   // Función para cerrar el menú si se hace clic fuera
   const handleClickOutside = (event: MouseEvent) => {
@@ -65,9 +73,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden block md:w-1/3">
           <Logo size="md" />
         </div>
-        <button onClick={toggleMenu} className=" animation-container sm:hidden">
-          <UseAnimations animation={menu2} size={50} fillColor="#a1d1cf" strokeColor="#a1d1cf" />
-        </button>
+
         <NavnarMenuDesktop />
 
         <div className="hidden sm:flex sm:justify-end sm:w-1/3">
@@ -113,18 +119,19 @@ const Navbar: React.FC = () => {
             </div>
           ) : (
             <>
-              <ButtonSignIn />
+              <div className="hidden md:block">
+                <ButtonSignIn handleOpenModal={handleOpenModal} />
+              </div>
             </>
           )}
         </div>
+
+        <button onClick={toggleMenu} className=" animation-container md:hidden">
+          <UseAnimations animation={menu2} size={50} fillColor="#a1d1cf" strokeColor="#a1d1cf" />
+        </button>
+        {isModalOpen && <Modal onClose={handleCloseModal} />}
       </div>
-      <NavbarMenu
-        isOpen={isMenuOpen}
-        toggleMenu={toggleMenu}
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-        showMenu={showMenu}
-      />
+      <NavbarMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} handleOpenModal={handleOpenModal} />
     </nav>
   );
 };

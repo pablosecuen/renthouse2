@@ -25,7 +25,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
     .map(([caracteristica, _]) => caracteristica);
 
   return (
-    <div className="min-h-screen pt-20 uppercase ">
+    <div className="min-h-screen pt-20  ">
       <DetailsCarousel images={propiedadEspecifica[0].imagenes} />
       <div className=" max-w-7xl mx-auto mt-4 flex flex-col">
         <nav>
@@ -55,7 +55,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
               {propiedadEspecifica[0].tipo}
             </span>
 
-            <p className="uppercase md:text-2xl font-extralight pb-10 p-4 md:p-0">
+            <p className=" md:text-2xl font-extralight   pb-10 p-4 md:p-0">
               {propiedadEspecifica[0].descripcion}
             </p>
             <SizeDescription propiedad={propiedadEspecifica[0]} size="2xl" />
