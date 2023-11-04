@@ -33,7 +33,7 @@ function BestSellers() {
   };
 
   return (
-    <div className="relative  text-black mt-16 -z-0 ">
+    <div className="relative  text-black mt-16 -z-0  hidden md:block">
       <div className="flex justify-between items-center  ">
         <button
           onClick={scrollLeft}

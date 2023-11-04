@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav>
-      <div className="z-50 xs:h-full fixed  font-semibold md:text-lg  tracking-wide px-8 w-full flex items-center justify-between align-middle lg:pr-8 bg-metal2 bg-center bg-contain backdrop-blur-3xl bg-white">
+      <div className="z-50 xs:h-full fixed  font-semibold md:text-lg w-full tracking-wide px-8  flex items-center justify-between align-middle lg:pr-8 bg-metal2 bg-center bg-contain backdrop-blur-3xl bg-white">
         <div className="hidden md:block md:w-1/3">
           <Link href="/">
             {" "}
@@ -123,6 +123,7 @@ const Navbar: React.FC = () => {
         toggleMenu={toggleMenu}
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
+        showMenu={showMenu}
       />
     </nav>
   );
