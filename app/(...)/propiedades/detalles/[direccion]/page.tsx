@@ -4,6 +4,7 @@ import DetailsCarousel from "@/app/components/carousel/details-carousel";
 import Link from "next/link";
 import SizeDescription from "@/app/components/card/size-description";
 import BookingForm from "@/app/components/form/booking-form";
+import GoogleCalendar from "@/app/components/calendar";
 
 function Detalles({ params }: { params: { direccion: string } }) {
   // Decodificar la dirección URL (eliminar los códigos de escape)
@@ -112,6 +113,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
               tarifa y disponibilidad
               <span className="absolute left-72 right-0 bottom-2 -translate-y-1/2 transform border-b border-gray-300"></span>
             </h4>
+            <GoogleCalendar />
           </article>
           <aside
             className="md:w-1/3 pb-10 md:pb-0

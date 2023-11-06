@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googleapis/calendar": "^9.3.2",
     "clsx": "^2.0.0",
     "firebase": "^10.5.2",
+    "gapi-script": "^1.2.0",
     "next": "14.0.0",
     "next-auth": "^4.24.4",
     "react": "^18",
