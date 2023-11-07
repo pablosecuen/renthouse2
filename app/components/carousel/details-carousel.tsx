@@ -11,7 +11,7 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [index, setIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const imageCount = images.length;
+  const imageCount = images?.length;
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,7 +53,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             width: `${imageCount * (100 / imageCount)}%`,
           }}
         >
-          {images.map((image: any, idx: any) => (
+          {images?.map((image: any, idx: any) => (
             <div
               key={idx}
               style={{ width: `${150 / imagesInView}%` }}
