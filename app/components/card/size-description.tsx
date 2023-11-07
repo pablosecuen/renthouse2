@@ -72,7 +72,7 @@ function SizeDescription({ propiedad, size }: any) {
             </clipPath>
           </defs>
         </svg>
-        <span className={`${textSize()}`}>{propiedad.huespedes}</span>
+        <span className={`${textSize()}`}>{propiedad?.huespedes}</span>
       </div>
       <div className="flex gap-3 items-center">
         <svg
@@ -87,7 +87,7 @@ function SizeDescription({ propiedad, size }: any) {
             fill="#5F5F5F"
           />
         </svg>
-        <span className={`${textSize()}`}>{propiedad.habitaciones}</span>
+        <span className={`${textSize()}`}>{propiedad?.habitaciones}</span>
       </div>
       <div className="flex gap-3 items-center">
         <svg
@@ -109,7 +109,7 @@ function SizeDescription({ propiedad, size }: any) {
             </clipPath>
           </defs>
         </svg>
-        <span className={`${textSize()}`}> {propiedad.baños}</span>
+        <span className={`${textSize()}`}> {propiedad?.baños}</span>
       </div>
     </div>
   );
