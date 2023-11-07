@@ -1,25 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from 'firebase/firestore';
-import 'firebase/firestore';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from 'firebase/firestore'; // Agrega la importación para Firestore
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASEAPIKEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASEAUTHDOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASEPROYECTID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASESTORAGEBUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASEMESSAGINGSENDERID,
-  appId: process.env.NEXT_PUBLIC_FIREBASEAPPID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASEMEASUREMENTID,
+  apiKey: "AIzaSyDISk7kCK08GvEcayPyINzQKdyZXj7BfQo",
+  authDomain: "rent-house-873b2.firebaseapp.com",
+  projectId: "rent-house-873b2",
+  storageBucket: "rent-house-873b2.appspot.com",
+  messagingSenderId: "331152682033",
+  appId: "1:331152682033:web:5652a9b1679d35e3c03910",
+  measurementId: "G-GNNWD1EF17"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const firestore = getFirestore(app);
-export { firestore };
+const firestore = getFirestore(app); // Obtenemos la instancia de Firestore
+
+export { firestore }; // Exportamos la instancia de Firestore
