@@ -1,33 +1,35 @@
-import React from "react";
-import { propiedades } from "@/utils";
+"use client";
+import React, { useEffect, useState } from "react";
 import DetailsCarousel from "@/app/components/carousel/details-carousel";
 import Link from "next/link";
 import SizeDescription from "@/app/components/card/size-description";
 import BookingForm from "@/app/components/form/booking-form";
-import GoogleCalendar from "@/app/components/calendar";
+import PropertyCalendar from "@/app/components/calendar";
+import usePropiedades from "@/app/hooks/usePropiedades";
+import { Propiedad } from "@/app/types/types";
+import { collection, getDocs } from "firebase/firestore";
+import { firestore } from "@/app/firebase";
 
 function Detalles({ params }: { params: { direccion: string } }) {
-  // Decodificar la dirección URL (eliminar los códigos de escape)
+  const propiedades = usePropiedades();
+  const [propiedadEspecifica, setPropiedadEspecifica] = useState<Propiedad | null>(null);
+
   const decodedDireccion = decodeURIComponent(params.direccion);
+  const direccionMinusculas = decodedDireccion;
 
-  // Convertir ambas direcciones a minúsculas para la comparación
-  const direccionMinusculas = decodedDireccion.toLowerCase();
+  useEffect(() => {
+    const propiedadActualizada = propiedades.find(
+      (propiedad) => propiedad.direccion.toLowerCase() === direccionMinusculas
+    );
 
-  // Filtrar propiedades basadas en la dirección
-  const propiedadEspecifica = propiedades.filter((propiedad) => {
-    // Convertir la dirección de la propiedad a minúsculas para la comparación
-    return propiedad.direccion.toLowerCase() === direccionMinusculas;
-  });
+    setPropiedadEspecifica(propiedadActualizada || null);
+  }, [propiedades, direccionMinusculas]);
 
-  const { caracteristicas } = propiedadEspecifica[0];
-
-  const caracteristicasVerdaderas = Object.entries(caracteristicas)
-    .filter(([_, valor]) => valor === true)
-    .map(([caracteristica, _]) => caracteristica);
+  const caracteristicas = propiedadEspecifica?.caracteristicas;
 
   return (
     <div className="min-h-screen pt-20  ">
-      <DetailsCarousel images={propiedadEspecifica[0].imagenes} />
+      <DetailsCarousel images={propiedadEspecifica?.imagenes || []} />
       <div className=" max-w-7xl mx-auto mt-4 flex flex-col">
         <nav>
           <Link href="/propiedades" className="flex uppercase tracking-widest items-center gap-2">
@@ -41,7 +43,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
         <div className="w-full flex flex-col md:flex-row gap-4">
           <article className="my-10 flex flex-col gap-4 md:w-2/3 w-full">
             <h3 className="text-3xl tracking-widest px-4 md:px-0">
-              {propiedadEspecifica[0].direccion}
+              {propiedadEspecifica?.direccion}
             </h3>
             <span className="flex items-center px-4 md:px-0">
               <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -53,20 +55,20 @@ function Detalles({ params }: { params: { direccion: string } }) {
                 ></path>
                 <circle cx="14" cy="6" r="1"></circle>
               </svg>
-              {propiedadEspecifica[0].tipo}
+              {propiedadEspecifica?.tipo}
             </span>
 
             <p className=" md:text-2xl font-extralight   pb-10 p-4 md:p-0">
-              {propiedadEspecifica[0].descripcion}
+              {propiedadEspecifica?.descripcion}
             </p>
-            <SizeDescription propiedad={propiedadEspecifica[0]} size="2xl" />
+            <SizeDescription propiedad={propiedadEspecifica} size="2xl" />
             <div className="w-full  overflow-x-hidden">
-              {propiedadEspecifica[0].video.length > 1 && (
+              {propiedadEspecifica?.video && propiedadEspecifica?.video.length > 1 && (
                 <iframe
                   width="800"
                   height="450"
-                  className=" top-0 left-0 w-full h-52 md:h-[450px]"
-                  src={propiedadEspecifica[0].video}
+                  className="top-0 left-0 w-full h-52 md:h-[450px]"
+                  src={propiedadEspecifica.video}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -91,21 +93,27 @@ function Detalles({ params }: { params: { direccion: string } }) {
               <span className="absolute left-72 right-0 bottom-2 -translate-y-1/2 transform border-b border-gray-300"></span>
             </h4>
             <div className="justify-start items-center p-8 gap-4 w-full   flex flex-wrap ">
-              {caracteristicasVerdaderas.map((caracteristica) => (
-                <div key={caracteristica} className=" min-w-min  flex  items-center ">
-                  <span className="flex gap-2 items-center justify-center  px-4 py-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                      width="20"
-                      height="20"
-                    >
-                      <path d="M243.8 339.8c-10.9 10.9-28.7 10.9-39.6 0l-64-64c-10.9-10.9-10.9-28.7 0-39.6 10.9-10.9 28.7-10.9 39.6 0l44.2 44.2 108.2-108.2c10.9-10.9 28.7-10.9 39.6 0 10.9 10.9 10.9 28.7 0 39.6l-128 128zM512 256c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"></path>
-                    </svg>
-                    {caracteristica}
-                  </span>
-                </div>
-              ))}
+              {caracteristicas &&
+                Object.entries(caracteristicas).map(([caracteristica, valor]) => {
+                  if (typeof valor === "boolean" && valor) {
+                    return (
+                      <div key={caracteristica} className="min-w-min flex items-center">
+                        <span className="flex gap-2 items-center justify-center px-4 py-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            width="20"
+                            height="20"
+                          >
+                            <path d="M243.8 339.8c-10.9 10.9-28.7 10.9-39.6 0l-64-64c-10.9-10.9-10.9-28.7 0-39.6 10.9-10.9 28.7-10.9 39.6 0l44.2 44.2 108.2-108.2c10.9-10.9 28.7-10.9 39.6 0 10.9 10.9 10.9 28.7 0 39.6l-128 128zM512 256c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"></path>
+                          </svg>
+                        </span>
+                        {caracteristica}
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
             </div>
 
             <h4 className="relative bg-white  px-4">
@@ -113,7 +121,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
               tarifa y disponibilidad
               <span className="absolute left-72 right-0 bottom-2 -translate-y-1/2 transform border-b border-gray-300"></span>
             </h4>
-            <GoogleCalendar />
+            {<PropertyCalendar property={propiedadEspecifica} />}
           </article>
           <aside
             className="md:w-1/3 pb-10 md:pb-0
@@ -123,7 +131,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
               {" "}
               <div className="w-full  bg-white border p-4   justify-center flex flex-col">
                 <h5>booking instantaneo</h5>
-                <BookingForm propiedad={propiedadEspecifica[0]} />
+                <BookingForm propiedad={propiedadEspecifica} />
               </div>
             </div>
           </aside>
