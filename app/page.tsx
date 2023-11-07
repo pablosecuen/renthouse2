@@ -1,3 +1,4 @@
+import React from "react";
 import FeedBack from "./layout/feedback";
 import Landing from "./layout/landing";
 import Soon from "./layout/soon";

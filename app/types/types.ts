@@ -1,5 +1,5 @@
 export interface Propiedad {
-    id: any;
+    id: string;
     firebaseId: string; 
     documentoId: string;
     direccion: string;
@@ -37,7 +37,7 @@ export interface Propiedad {
 
 
   export interface Reserva {
-    map?: any;
+    map?: unknown;
     start: { seconds: number; nanoseconds: number };
     end: { seconds: number; nanoseconds: number };
     title?: string;

@@ -7,8 +7,6 @@ import BookingForm from "@/app/components/form/booking-form";
 import PropertyCalendar from "@/app/components/calendar";
 import usePropiedades from "@/app/hooks/usePropiedades";
 import { Propiedad } from "@/app/types/types";
-import { collection, getDocs } from "firebase/firestore";
-import { firestore } from "@/app/firebase";
 
 function Detalles({ params }: { params: { direccion: string } }) {
   const propiedades = usePropiedades();
