@@ -7,7 +7,7 @@ function BookingForm({ propiedad }: any) {
   return (
     <div className="sticky flex flex-col gap-4">
       <div>
-        <p>${propiedad.precio} X NOCHE</p>
+        <p>${propiedad?.precio} X NOCHE</p>
         <p>ESTADIA MINIMA: 1 DIA</p>
       </div>
 
