@@ -1,4 +1,4 @@
-import Card from "@/app/components/card";
+
 import CardContainer from "@/app/components/card/card-container";
 import Filters from "@/app/components/form/filters";
 import SearchForm from "@/app/components/form/search-form";
