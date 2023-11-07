@@ -1,103 +1,52 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { gapi } from "gapi-script";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
 
-const API_KEY = process.env.GOOGLE_API_KEY as string;
-const CLIENT_ID = process.env.GOOGLE_CLIENT_ID as string;
-const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
-
-interface Event {
-  summary: string;
-  start: {
-    dateTime: string;
-  };
-}
-
-const GoogleCalendar: React.FC = () => {
-  const [events, setEvents] = useState<Event[]>([]);
-
+const PropertyCalendar = ({ property }: any) => {
+  const [events, setEvents] = useState<any[]>([]);
   useEffect(() => {
-    gapi.load("client:auth2", () => {
-      gapi.client
-        .init({
-          apiKey: API_KEY,
-          clientId: CLIENT_ID,
-          discoveryDocs: DISCOVERY_DOCS,
-          scope: SCOPES,
-        })
-        .then(
-          () => {
-            handleAuthentication();
-          },
-          (error: Error) => {
-            console.error(error);
-          }
-        );
-    });
-  }, []);
-
-  const handleAuthentication = () => {
-    const authInstance = gapi.auth2.getAuthInstance();
-    if (!authInstance) {
-      gapi.auth2.init({ client_id: CLIENT_ID, scope: SCOPES }).then(() => {
-        authenticateWithGoogle();
+    const formatReservas = (reservas: any) => {
+      return reservas?.map((reserva: any) => {
+        const start = new Date(reserva.start.seconds * 1000);
+        const end = new Date(reserva.end.seconds * 1000);
+        return {
+          title: reserva.title || "Ocupado",
+          start: start.toISOString(),
+          end: end.toISOString(),
+        };
       });
-    } else {
-      authenticateWithGoogle();
+    };
+
+    if (property && property.reservas) {
+      const formattedReservas = formatReservas(property.reservas);
+      setEvents(formattedReservas);
     }
-  };
+  }, [property]);
 
-  const authenticateWithGoogle = () => {
-    gapi.auth2
-      .getAuthInstance()
-      .signIn()
-      .then(
-        () => {
-          listUpcomingEvents();
-        },
-        (error: Error) => {
-          console.error(error);
-        }
-      );
-  };
+  if (!property) {
+    return <div>No hay datos de propiedad</div>;
+  }
 
-  const listUpcomingEvents = () => {
-    gapi.client.calendar.events
-      .list({
-        calendarId: "primary",
-        timeMin: new Date().toISOString(),
-        showDeleted: false,
-        singleEvents: true,
-        maxResults: 10,
-        orderBy: "startTime",
-      })
-      .then((response: any) => {
-        setEvents(response.result.items as Event[]);
-      })
-      .catch((error: Error) => {
-        console.error(error);
-      });
-  };
+  const { direccion } = property;
 
   return (
     <div>
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=renthousedev%40gmail.com&ctz=America%2FArgentina%2FCordoba"
-        style={{ border: 0 }}
-        width="800"
-        height="600"
-        frameBorder="0"
-        scrolling="no"
-      ></iframe>
-      {events.map((event, i) => (
-        <div key={i}>
-          <h3>{event.summary}</h3>
-          <p>{event.start.dateTime}</p>
-        </div>
-      ))}
+      <h2>{direccion}</h2>
+      <div style={{ height: 800 }}>
+        <FullCalendar
+          plugins={[dayGridPlugin]}
+          initialView="dayGridMonth"
+          headerToolbar={{
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay",
+          }}
+          events={events}
+        />
+      </div>
     </div>
   );
 };
 
-export default GoogleCalendar;
+export default PropertyCalendar;
