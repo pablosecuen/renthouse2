@@ -1,9 +1,7 @@
-"use client";
-import React, { useState } from "react";
+import { Propiedad } from "@/app/types/types";
+import React from "react";
 
-function BookingForm({ propiedad }: any) {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(null);
+function BookingForm({ propiedad }: { propiedad: Propiedad }) {
   return (
     <div className="sticky flex flex-col gap-4">
       <div>

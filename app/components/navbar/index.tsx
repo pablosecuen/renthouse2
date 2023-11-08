@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import UseAnimations from "react-useanimations";
 import menu2 from "react-useanimations/lib/menu2";
@@ -8,7 +10,7 @@ import ButtonSignIn from "../buttons/sign-in";
 import Logo from "@/public/assets/logo";
 import Link from "next/link";
 import Image from "next/legacy/image";
-import { signIn, useSession, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import Modal from "../modals/sign-in";
 
 const Navbar: React.FC = () => {

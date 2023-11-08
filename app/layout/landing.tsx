@@ -1,7 +1,5 @@
 import React from "react";
 import SearchForm from "../components/form/search-form";
-import Image from "next/legacy/image";
-import foto from "@/public/assets/Rectangle 7.png";
 import LanginCarousel from "../components/carousel/landing-carousel";
 
 function Landing() {

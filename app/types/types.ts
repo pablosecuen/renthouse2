@@ -1,4 +1,5 @@
 export interface Propiedad {
+  precio?: number;
     id: string;
     firebaseId: string; 
     documentoId: string;
@@ -26,6 +27,7 @@ export interface Propiedad {
       parrilla: boolean;
       wifi: boolean;
       estacionamiento: boolean;
+   
     }[];
     reservas: {
       start: Date;

@@ -1,6 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Card from "../components/card";
 import CardContainer from "../components/card/card-container";
 function Soon() {
   return (

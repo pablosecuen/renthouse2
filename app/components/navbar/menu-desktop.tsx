@@ -17,10 +17,6 @@ function NavnarMenuDesktop() {
     setSelectedIndex(index);
   };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
   return (
     <div className="hidden md:flex items-center ">
       <div style={{ display: "flex", gap: "0.5rem" }}>

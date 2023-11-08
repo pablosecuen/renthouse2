@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
 import { Propiedad } from "../types/types";

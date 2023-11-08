@@ -1,5 +1,5 @@
 import Logo from "@/public/assets/logo";
-import Image from "next/legacy/image";
+
 import React from "react";
 
 function Footer() {

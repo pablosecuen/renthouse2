@@ -1,10 +1,11 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
 import React from "react";
-import { propiedades } from "@/utils";
-import SizeDescription from "./size-description";
 
-function Card({ propiedad }: any) {
+import SizeDescription from "./size-description";
+import { Propiedad } from "@/app/types/types";
+
+function Card({ propiedad }: {propiedad:Propiedad}) {
   return (
     <article className="border  h-auto md:w-96 md:h-[600px] bg-white shadow-black/20 shadow-md ">
       <div>

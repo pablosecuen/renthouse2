@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useState } from "react";
 import { faqs } from "@/utils";
 
 function Faqs() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [openDetails, setOpenDetails] = useState({});
+
 
   // Función para manejar cambios en el input de búsqueda
   const handleSearch = (event: any) => {

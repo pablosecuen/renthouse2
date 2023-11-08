@@ -1,9 +1,10 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import handleNavItemClick from "@/utils";
-import Modal from "../modals/sign-in";
+
 import ButtonSignIn from "../buttons/sign-in";
-import { signIn, useSession, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 interface NavbarMenuProps {
   isOpen: boolean;

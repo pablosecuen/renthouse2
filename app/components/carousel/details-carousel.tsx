@@ -5,7 +5,7 @@ import Image from "next/legacy/image";
 import React, { useEffect, useRef, useState } from "react";
 
 interface CarouselProps {
-  images: any[];
+  images: string[];
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
@@ -53,7 +53,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             width: `${imageCount * (100 / imageCount)}%`,
           }}
         >
-          {images?.map((image: any, idx: any) => (
+          {images?.map((image: string, idx: number) => (
             <div
               key={idx}
               style={{ width: `${150 / imagesInView}%` }}

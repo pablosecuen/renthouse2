@@ -1,6 +1,7 @@
+import { Propiedad } from "@/app/types/types";
 import React from "react";
 
-function SizeDescription({ propiedad, size }: any) {
+function SizeDescription({ propiedad, size }: { propiedad: Propiedad; size: string }) {
   const iconSize = () => {
     switch (size) {
       case "xs":
