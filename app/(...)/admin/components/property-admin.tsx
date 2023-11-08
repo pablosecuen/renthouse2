@@ -3,7 +3,6 @@
 import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-
 import { Propiedad } from "@/app/types/types";
 
 const PropertyAdmin = ({ property }: { property: Propiedad }) => {
@@ -26,7 +25,12 @@ const PropertyAdmin = ({ property }: { property: Propiedad }) => {
     <div>
       <h2>Administrar Fechas Ocupadas para {property?.direccion}</h2>
       <div>
-        <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" events={events} />
+        <FullCalendar
+          plugins={[dayGridPlugin]}
+          locale={"es"}
+          initialView="dayGridMonth"
+          events={events}
+        />
       </div>
     </div>
   );

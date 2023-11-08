@@ -29,11 +29,10 @@ const PropertyCalendar = ({ property }: any) => {
     return <div>No hay datos de propiedad</div>;
   }
 
-  const { direccion } = property;
+
 
   return (
     <div>
-      <h2>{direccion}</h2>
       <div style={{ height: 800 }}>
         <FullCalendar
           plugins={[dayGridPlugin]}
@@ -44,6 +43,7 @@ const PropertyCalendar = ({ property }: any) => {
             right: "dayGridMonth,timeGridWeek,timeGridDay",
           }}
           events={events}
+          locale={"es"}
         />
       </div>
     </div>
