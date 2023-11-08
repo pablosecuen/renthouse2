@@ -9,7 +9,6 @@ import { Propiedad, Reserva } from "@/app/types/types";
 import usePropiedades from "@/app/hooks/usePropiedades";
 import PropertyAdmin from "./components/property-admin";
 import withAuth from "@/app/HOC/withAuth";
-import moment from "moment";
 
 function ReservationAdministrator() {
   const arrProperties = usePropiedades();
@@ -161,6 +160,8 @@ function ReservationAdministrator() {
     }
   };
 
+  console.log(selectedProperty?.reservas, "asdaAsdasd");
+
   return (
     <div className="w-screen min-h-screen flex justify-center items-center flex-col py-10">
       <div className="flex gap-20">
@@ -221,12 +222,30 @@ function ReservationAdministrator() {
                   handleReservaSelection(selectedTimestamp);
                 }}
               >
-                {selectedProperty?.reservas.map((reserva, index) => (
-                  <option key={index} value={reserva.start.seconds}>
-                    Start: {moment(reserva.start.seconds * 1000).format("MM/DD/YYYY")} - End:{" "}
-                    {moment(reserva.end.seconds * 1000).format("MM/DD/YYYY")}
-                  </option>
-                ))}
+                {selectedProperty?.reservas.map((reserva: any, index) => {
+                  const startDate =
+                    reserva.start && reserva.start.seconds
+                      ? new Date(reserva.start.seconds * 1000)
+                      : null;
+                  const endDate =
+                    reserva.end && reserva.end.seconds
+                      ? new Date(reserva.end.seconds * 1000)
+                      : null;
+
+                  if (startDate && endDate) {
+                    return (
+                      <option key={index} value={startDate.getTime()}>
+                        Start:{" "}
+                        {`${
+                          startDate.getMonth() + 1
+                        }/${startDate.getDate()}/${startDate.getFullYear()}`}{" "}
+                        - End:{" "}
+                        {`${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()}`}
+                      </option>
+                    );
+                  }
+                  return null;
+                })}
               </select>
             </div>
             <button onClick={deleteReservation} className="bg-gray-600 py-1 text-white">

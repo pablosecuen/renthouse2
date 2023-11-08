@@ -39,8 +39,13 @@ export interface Propiedad {
 
 
   export interface Reserva {
-    map?: unknown;
-    start: { seconds: number; nanoseconds: number };
-    end: { seconds: number; nanoseconds: number };
+    start: {
+      seconds: number;
+      nanoseconds: number;
+    };
+    end: {
+      seconds: number;
+      nanoseconds: number;
+    };
     title?: string;
   }
