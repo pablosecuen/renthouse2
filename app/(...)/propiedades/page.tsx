@@ -1,4 +1,3 @@
-
 import CardContainer from "@/app/components/card/card-container";
 import Filters from "@/app/components/form/filters";
 import SearchForm from "@/app/components/form/search-form";
@@ -17,7 +16,7 @@ function Propiedades() {
         </nav>
         <div className="py-10">
           {" "}
-          <CardContainer scale={80} />
+          <CardContainer />
         </div>
       </div>
       <aside className="md:w-1/2 md:flex items-center justify-center hidden"> aca va el mapa</aside>
