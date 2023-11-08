@@ -59,7 +59,8 @@ function Detalles({ params }: { params: { direccion: string } }) {
             <p className=" md:text-2xl font-extralight   pb-10 p-4 md:p-0">
               {propiedadEspecifica?.descripcion}
             </p>
-            <SizeDescription propiedad={propiedadEspecifica} size="2xl" />
+            {propiedadEspecifica && <SizeDescription propiedad={propiedadEspecifica} size="2xl" />}
+
             <div className="w-full  overflow-x-hidden">
               {propiedadEspecifica?.video && propiedadEspecifica?.video.length > 1 && (
                 <iframe
@@ -129,7 +130,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
               {" "}
               <div className="w-full  bg-white border p-4   justify-center flex flex-col">
                 <h5>booking instantaneo</h5>
-                <BookingForm propiedad={propiedadEspecifica} />
+                {propiedadEspecifica && <BookingForm propiedad={propiedadEspecifica} />}
               </div>
             </div>
           </aside>
