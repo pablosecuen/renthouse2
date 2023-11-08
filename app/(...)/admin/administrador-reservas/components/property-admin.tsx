@@ -22,16 +22,15 @@ const PropertyAdmin = ({ property }: { property: Propiedad }) => {
   const events = formatReservas(property?.reservas);
 
   return (
-    <div>
+    <div className="w-full h-full">
       <h2>Administrar Fechas Ocupadas para {property?.direccion}</h2>
-      <div>
-        <FullCalendar
-          plugins={[dayGridPlugin]}
-          locale={"es"}
-          initialView="dayGridMonth"
-          events={events}
-        />
-      </div>
+
+      <FullCalendar
+        plugins={[dayGridPlugin]}
+        locale={"es"}
+        initialView="dayGridMonth"
+        events={events}
+      />
     </div>
   );
 };

@@ -1,221 +1,70 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import React, { useEffect, useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import PropertyAdmin from "./components/property-admin";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { firestore } from "@/app/firebase";
-import { Propiedad, Reserva } from "@/app/types/types";
-import usePropiedades from "@/app/hooks/usePropiedades";
+import { v4 as uuidv4 } from "uuid";
+import { refreshToken } from "@/app/middleware/refreshToken";
 
 function Admin() {
-  const arrProperties = usePropiedades();
-  const [propiedades, setPropiedades] = useState<Propiedad[]>([]);
-  const [selectedProperty, setSelectedProperty] = useState<Propiedad>(propiedades[0]);
-  const [fromDate, setFromDate] = useState<Date>(new Date());
-  const [toDate, setToDate] = useState<Date>(new Date());
-  const [selectedReserva, setSelectedReserva] = useState<any>(null);
+  const router = useRouter();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    if (arrProperties && arrProperties.length > 0) {
-      setPropiedades(arrProperties);
-      setSelectedProperty(arrProperties[0]);
-    }
-  }, [arrProperties, propiedades]);
+  const handleLogin = async () => {
+    // Realizar la consulta a Firestore para verificar las credenciales
+    const adminsCollection = collection(firestore, "admin");
+    const q = query(
+      adminsCollection,
+      where("usuario", "==", username),
+      where("password", "==", password)
+    );
 
-  const handlePropertyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selected = propiedades.find((property) => property.direccion === event.target.value);
-    if (selected) {
-      setSelectedProperty(selected);
-    }
-  };
-
-  const handleDateChange = (date: Date | null, type: string) => {
-    if (date !== null) {
-      if (type === "from") {
-        setFromDate(date);
-      } else {
-        setToDate(date);
-      }
-    }
-  };
-
-  const addReservation = async () => {
-    if (!selectedProperty) return;
-
-    const newReservation: Reserva = {
-      start: {
-        seconds: Math.floor(fromDate.getTime() / 1000),
-        nanoseconds: 0,
-      },
-      end: {
-        seconds: Math.floor(toDate.getTime() / 1000),
-        nanoseconds: 0,
-      },
-      title: "Ocupado",
-    };
-
-    const updateReservasEnFirestore = async (propiedadId: string, newReservation: Reserva) => {
-      const propertyDoc = doc(firestore, "propiedades", propiedadId);
-      try {
-        const propertySnapshot = await getDoc(propertyDoc);
-        if (propertySnapshot.exists()) {
-          const propertyData = propertySnapshot.data();
-          const currentReservas = propertyData.reservas;
-
-          // Verificar superposición con reservas existentes
-          const hasOverlappingReservations = currentReservas.some((reserva: Reserva) => {
-            const reservaStart = reserva.start.seconds * 1000;
-            const reservaEnd = reserva.end.seconds * 1000;
-            const newReservationStart = fromDate.getTime();
-            const newReservationEnd = toDate.getTime();
-            return (
-              (newReservationStart >= reservaStart && newReservationStart < reservaEnd) ||
-              (newReservationEnd > reservaStart && newReservationEnd <= reservaEnd)
-            );
-          });
-
-          if (hasOverlappingReservations) {
-            alert("La propiedad ya está reservada para estas fechas");
-            return;
-          }
-
-          await updateDoc(propertyDoc, {
-            reservas: [...currentReservas, newReservation],
-          });
-          alert("Reserva realizada correctamente");
-        } else {
-          console.error("El documento no existe en Firestore.");
-        }
-      } catch (error) {
-        alert("Error al actualizar reservas en Firestore");
-        console.error(error);
-      }
-    };
-
-    const propiedadId = selectedProperty?.id;
-
-    updateReservasEnFirestore(propiedadId, newReservation);
-  };
-
-  const deleteReservation = async () => {
-    if (!selectedProperty || !selectedReserva) return;
-
-    const propertyDoc = doc(firestore, "propiedades", selectedProperty.id);
     try {
-      const propertySnapshot = await getDoc(propertyDoc);
-      if (propertySnapshot.exists()) {
-        const propertyData = propertySnapshot.data();
-        const currentReservas = propertyData?.reservas || [];
+      const querySnapshot = await getDocs(q);
+      if (!querySnapshot.empty) {
+        // Credenciales válidas, generar y guardar el token
+        const token = uuidv4(); // Genera un token único (aquí se usa la librería uuid)
+        localStorage.setItem("adminToken", token); // Almacena el token en localStorage
 
-        const updatedReservas = currentReservas.filter(
-          (reserva: Reserva) => reserva.start.seconds !== selectedReserva.start.seconds
-        );
-
-        await updateDoc(propertyDoc, { reservas: updatedReservas });
-        alert("Reserva eliminada correctamente");
-
-        // Actualizar el estado de propiedades después de eliminar la reserva
-        const updatedProperties = propiedades.map((property) =>
-          property.id === selectedProperty.id
-            ? { ...property, reservas: updatedReservas }
-            : property
-        );
-        setPropiedades(updatedProperties);
+        // Redirige a la página de administración
+        router.push("/admin/administrador-reservas");
       } else {
-        console.error("El documento no existe en Firestore.");
+        alert("Credenciales incorrectas");
       }
     } catch (error) {
-      console.error("Error al actualizar reservas en Firestore:", error);
-      alert("No se pudo eliminar la reserva");
+      console.error("Error al verificar las credenciales:", error);
+      alert("Error al verificar las credenciales");
     }
   };
 
-  const handleReservaSelection = (selectedTimestamp: number) => {
-    const selectedReserva =
-      selectedProperty && Array.isArray(selectedProperty.reservas)
-        ? selectedProperty.reservas.find(
-            (reserva: any) => reserva.start.seconds === selectedTimestamp
-          )
-        : null;
-
-    if (selectedReserva) {
-      setSelectedReserva(selectedReserva);
-    } else {
-      setSelectedReserva(null);
-    }
-  };
+  useEffect(() => {
+    const tokenRenewalTimer = refreshToken();
+    // Limpiar el temporizador al desmontar el componente
+    return () => {
+      clearInterval(tokenRenewalTimer);
+    };
+  }, []);
 
   return (
-    <div className="w-screen min-h-screen flex justify-center items-center flex-col py-10">
-      <div className="flex  gap-20">
-        <PropertyAdmin property={selectedProperty} />
-        <div className="flex flex-col gap-8">
-          <div className="mx-auto">
-            <h1 className="text-center">Panel de Administrador</h1>
-            <label htmlFor="propertySelect" className="text-center ">
-              Seleccionar Propiedad:{" "}
-            </label>
-            <select
-              id="propertySelect"
-              onChange={handlePropertyChange}
-              value={selectedProperty?.direccion}
-            >
-              {propiedades.map((property, index) => (
-                <option key={index} value={property.direccion}>
-                  {property.direccion}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex flex-col gap-8 border">
-            <h2 className="text-center">Agregar Reserva</h2>
-            <div className="border-2">
-              <label htmlFor="fromDate">Desde: </label>
-              <DatePicker
-                id="fromDate"
-                selected={fromDate}
-                onChange={(date) => handleDateChange(date, "from")}
-              />
-            </div>
-            <div className="border-2">
-              <label htmlFor="toDate">Hasta: </label>
-              <DatePicker
-                id="toDate"
-                selected={toDate}
-                onChange={(date) => handleDateChange(date, "to")}
-              />
-            </div>
-            <button onClick={addReservation} className="bg-gray-600 py-1 text-white">
-              Agregar Reserva
-            </button>
-          </div>
-          <div className="flex flex-col gap-8 border">
-            {" "}
-            <h2 className="text-center">Eliminar Reserva</h2>
-            <div>
-              <label htmlFor="selectReserva">Seleccionar Reserva: </label>
-              <select
-                id="selectReserva"
-                onChange={(event) => {
-                  const selectedTimestamp = Number(event.target.value);
-                  handleReservaSelection(selectedTimestamp);
-                }}
-              >
-                {selectedProperty?.reservas.map((reserva: any, index) => (
-                  <option key={index} value={reserva.start.seconds}>
-                    {new Date(reserva.start.seconds * 1000).toString()}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <button onClick={deleteReservation} className="bg-gray-600 py-1 text-white">
-              Eliminar Reserva
-            </button>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen text-black flex flex-col justify-center items-center border gap-4">
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Usuario"
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Contraseña"
+      />
+      <button onClick={handleLogin} className="py-1 px-4 bg-gray-600 text-white rounded-md">
+        Iniciar sesión
+      </button>
     </div>
   );
 }
