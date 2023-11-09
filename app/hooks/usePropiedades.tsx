@@ -16,7 +16,6 @@ const usePropiedades = (): Propiedad[] => {
         const propiedadData = doc.data() as Propiedad;
         propiedadesData.push(propiedadData);
       });
-      console.log("Propiedades recuperadas:", propiedadesData);
       setPropiedades(propiedadesData);
     });
 

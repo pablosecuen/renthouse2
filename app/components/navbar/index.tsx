@@ -12,11 +12,13 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import { useSession, signOut } from "next-auth/react";
 import Modal from "../modals/sign-in";
+import { Toaster, toast } from "sonner";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [showWelcome, setShowWelcome] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
 
@@ -63,8 +65,25 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      toast.success("¡Cierre de sesión exitoso!");
+    } catch (error) {
+      toast.error("Error al cerrar sesión");
+    }
+  };
+
+  useEffect(() => {
+    if (session && session.user && !showWelcome) {
+      toast.success(`¡Bienvenido, ${session.user.name}!`);
+      setShowWelcome(true);
+    }
+  }, [session, showWelcome]);
+
   return (
     <nav>
+      <Toaster position="top-center" expand={true} richColors />
       <div className="z-50 xs:h-full fixed  font-semibold md:text-lg w-full tracking-wide px-8  flex items-center justify-between align-middle lg:pr-8 bg-metal2 bg-center bg-contain backdrop-blur-3xl bg-white">
         <div className="hidden md:block md:w-1/3">
           <Link href="/">
@@ -107,11 +126,7 @@ const Navbar: React.FC = () => {
                     </Link>
                     <button
                       className="flex items-center py-2 mt-4 rounded-full px-4 h-8 mb-1 bg-[#a1d1cf]"
-                      onClick={async () => {
-                        await signOut({
-                          callbackUrl: "/",
-                        });
-                      }}
+                      onClick={handleLogout}
                     >
                       Logout
                     </button>

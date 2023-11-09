@@ -25,7 +25,6 @@ export { firestore }; // Exportamos la instancia de Firestore
 // Lógica para manejar la autenticación
 function handleLogin(email:string, password:string) {
   const auth = getAuth(app); // Pasa la instancia de la app a getAuth
-  console.log(  "asdasd") // Devuelve la promesa de inicio de sesión
   return signInWithEmailAndPassword(auth, email, password);
 }
 

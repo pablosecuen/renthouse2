@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { firestore } from "@/app/firebase";
 import DatePicker from "react-datepicker";
+import { Toaster, toast } from "sonner";
 
 function AddReservation({ selectedProperty }: any) {
   const [fromDate, setFromDate] = useState<Date>(new Date());
@@ -59,20 +60,19 @@ function AddReservation({ selectedProperty }: any) {
           });
 
           if (hasOverlappingReservations) {
-            alert("La propiedad ya está reservada para estas fechas");
+            toast.error("La propiedad ya está reservada para estas fechas");
             return;
           }
 
           await updateDoc(propertyDoc, {
             reservas: [...currentReservas, newReservation],
           });
-          alert("Reserva realizada correctamente");
+          toast.success("Reserva realizada correctamente");
         } else {
-          console.error("El documento no existe en Firestore.");
+          toast.error("El documento no existe en Firestore.");
         }
       } catch (error) {
-        alert("Error al actualizar reservas en Firestore");
-        console.error(error);
+        toast.error("Error al actualizar reservas en Firestore");
       }
     };
 
@@ -82,6 +82,7 @@ function AddReservation({ selectedProperty }: any) {
   };
   return (
     <div className="flex flex-col gap-8 border">
+      <Toaster position="top-center" expand={true} richColors />
       <h2 className="text-center">Agregar Reserva</h2>
       <div className="border-2">
         <label htmlFor="fromDate">Desde: </label>

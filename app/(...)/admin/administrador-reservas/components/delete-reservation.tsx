@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { firestore } from "@/app/firebase";
 import { Propiedad, Reserva } from "@/app/types/types";
+import { Toaster, toast } from "sonner";
 
 function DeleteReservation({ selectedProperty, propiedades, setPropiedades }: any) {
   const [selectedReserva, setSelectedReserva] = useState<any>(null);
@@ -21,18 +22,12 @@ function DeleteReservation({ selectedProperty, propiedades, setPropiedades }: an
         );
 
         if (updatedReservas.length === 0) {
-          // Si se está intentando eliminar la única reserva existente
-          console.log("Antes de la actualización: updatedReservas.length", updatedReservas.length);
           await updateDoc(propertyDoc, { reservas: [] });
           const updatedSnapshot = await getDoc(propertyDoc);
           const updatedData = updatedSnapshot.data();
           const updatedReservasData = updatedData?.reservas || [];
-          console.log(
-            "Después de la actualización: updatedReservasData.length",
-            updatedReservasData.length
-          );
           if (updatedReservasData.length !== 0) {
-            alert("Error al eliminar la reserva");
+            toast.error("Error al eliminar la reserva");
             return;
           }
         } else {
@@ -40,7 +35,7 @@ function DeleteReservation({ selectedProperty, propiedades, setPropiedades }: an
           await updateDoc(propertyDoc, { reservas: updatedReservas });
         }
 
-        alert("Reserva eliminada correctamente");
+        toast.success("Reserva eliminada correctamente");
 
         const updatedProperties = propiedades.map((property: Propiedad) =>
           property.id === selectedProperty.id
@@ -49,11 +44,11 @@ function DeleteReservation({ selectedProperty, propiedades, setPropiedades }: an
         );
         setPropiedades(updatedProperties);
       } else {
-        console.error("El documento no existe en Firestore.");
+        toast.error("El documento no existe en Firestore.");
       }
     } catch (error) {
       console.error("Error al actualizar reservas en Firestore:", error);
-      alert("No se pudo eliminar la reserva");
+      toast.error("No se pudo eliminar la reserva");
     }
   };
 
@@ -64,7 +59,6 @@ function DeleteReservation({ selectedProperty, propiedades, setPropiedades }: an
             (reserva: any) => reserva.start.seconds === selectedTimestamp
           )
         : null;
-    console.log("selectedReserva:", selectedReserva);
     if (selectedReserva) {
       setSelectedReserva(selectedReserva);
     } else {
@@ -73,7 +67,7 @@ function DeleteReservation({ selectedProperty, propiedades, setPropiedades }: an
   };
   return (
     <div className="flex flex-col gap-8 border">
-      {" "}
+      <Toaster position="top-center" expand={true} richColors />
       <h2 className="text-center">Eliminar Reserva</h2>
       <div>
         <label htmlFor="selectReserva">Seleccionar Reserva: </label>

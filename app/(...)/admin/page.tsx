@@ -5,6 +5,7 @@ import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { handleLogin, handleLogout } from "@/app/firebase";
+import { Toaster, toast } from "sonner";
 
 function Admin() {
   const router = useRouter();
@@ -16,21 +17,20 @@ function Admin() {
     try {
       await handleLogin(email, password)
         .then(() => {
-          alert("Bienvenido admin");
+          toast.success("Bienvenido admin");
         })
         .catch((error) => {
-          alert(`Error al iniciar sesión: ${error.message}`);
+          toast.error(`Error al iniciar sesión: ${error.message}`);
         });
-      console.log("Bienvenido admin");
       router.push("/admin/administrador-reservas");
     } catch (error: any) {
       console.error("Error de inicio de sesión:", error);
       if (error.code === "auth/wrong-password") {
-        alert("Contraseña incorrecta");
+        toast.error("Contraseña incorrecta");
       } else if (error.code === "auth/user-not-found") {
-        alert("Usuario no encontrado");
+        toast.error("Usuario no encontrado");
       } else {
-        alert("Error de inicio de sesión: " + error.message);
+        toast.error("Error de inicio de sesión: " + error.message);
       }
     }
   };
@@ -51,6 +51,7 @@ function Admin() {
 
   return (
     <div className="min-h-screen text-black flex flex-col justify-center items-center border gap-4">
+      <Toaster position="top-center" expand={true} richColors />
       <div className="flex-col flex border-2 p-4 gap-4">
         <label>Usuario</label>
         <input
