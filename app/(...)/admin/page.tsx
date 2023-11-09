@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { handleLogin, handleLogout } from "@/app/firebase";
 import { Toaster, toast } from "sonner";
+import Logo from "@/public/assets/logo";
 
 function Admin() {
   const router = useRouter();
@@ -52,7 +53,8 @@ function Admin() {
   return (
     <div className="min-h-screen text-black flex flex-col justify-center items-center border gap-4">
       <Toaster position="top-center" expand={true} richColors />
-      <div className="flex-col flex border-2 p-4 gap-4">
+      <Logo size="xl" />
+      <div className="flex-col flex border-2 p-4 gap-4 md:w-96 w-full">
         <label>Usuario</label>
         <input
           type="email"
