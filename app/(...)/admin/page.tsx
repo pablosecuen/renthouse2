@@ -43,6 +43,7 @@ function Admin() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Contraseña"
+          className="mb-2"
         />
         <button onClick={handleLoginClick} className="py-1 px-4 bg-gray-600 text-white rounded-md">
           Iniciar sesión
