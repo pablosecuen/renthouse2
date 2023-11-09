@@ -7,22 +7,23 @@ export interface ModalProps {
 function Login({ onClose }: ModalProps) {
   return (
     <section className="bg-primary  md:w-[450px] w-[350px] bg-gray-200 rounded-xl md:h-full ">
-      <div className="flex flex-col z-20 items-center justify-center md:px-6 px-1 py-4 md:py-8 mx-auto md:h-full ">
+      <div className="flex flex-col relative z-20 items-center justify-center md:px-6 px-1 py-4 md:py-8 mx-auto md:h-full ">
         <button
           onClick={onClose}
-          className="px-4  mr-2 mt-2 text-sm right-0 ml-auto py-2 bg-gray-600 text-white rounded"
+          className="px-4  mr-2 mt-2 text-sm right-2 ml-auto py-2 bg-gray-600 text-white rounded absolute top-2 "
         >
           Cerrar
         </button>
         <a href="https://localhost:3000" className=" mb-6">
-          <Logo size="md" />
+          <Logo size="xl" />
         </a>
         <div className=" bg-primary w-full rounded-lg shadow border md:mt-0  xl:p-0 bg-gray-300 ">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
-              Ingresa con tu cuenta
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-xl  text-center">
+              Ingresa con tu cuenta de Google
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <GoogleButtonLogin />
+            {/*          <form className="space-y-4 md:space-y-6" action="#">
               <div>
                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">
                   Email
@@ -81,14 +82,14 @@ function Login({ onClose }: ModalProps) {
                   Ingresa
                 </button>
               </div>
-              <GoogleButtonLogin />
+           
               <p className="text-sm font-light text-gray-500 ">
                 Aún no tienes una cuenta?{" "}
                 <a href="#" className="font-medium text-secondary hover:underline ">
                   Registro
                 </a>
               </p>
-            </form>
+            </form> */}
           </div>
         </div>
       </div>
