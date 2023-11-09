@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { getFirestore } from 'firebase/firestore'; // Agrega la importación para Firestore
 
 // Your web app's Firebase configuration
@@ -25,7 +25,19 @@ export { firestore }; // Exportamos la instancia de Firestore
 // Lógica para manejar la autenticación
 function handleLogin(email:string, password:string) {
   const auth = getAuth(app); // Pasa la instancia de la app a getAuth
-  return signInWithEmailAndPassword(auth, email, password); // Devuelve la promesa de inicio de sesión
+  console.log(  "asdasd") // Devuelve la promesa de inicio de sesión
+  return signInWithEmailAndPassword(auth, email, password);
 }
 
 export { handleLogin };
+
+
+// Lógica para manejar el logout (cierre de sesión)
+function handleLogout() {
+  const auth = getAuth(); // Obtén la instancia de autenticación
+
+  // Realiza el logout
+  return signOut(auth);
+}
+
+export { handleLogout };
