@@ -5,13 +5,13 @@ import { getFirestore } from 'firebase/firestore'; // Agrega la importación par
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASEAPIKEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASEAUTHDOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASEPROYECTID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASESTORAGEBUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASEMESSAGINGSENDERID,
-  appId: process.env.NEXT_PUBLIC_FIREBASEAPPID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASEMEASUREMENTID
+  apiKey: "AIzaSyDISk7kCK08GvEcayPyINzQKdyZXj7BfQo",
+  authDomain: "rent-house-873b2.firebaseapp.com",
+  projectId: "rent-house-873b2",
+  storageBucket: "rent-house-873b2.appspot.com",
+  messagingSenderId: "331152682033",
+  appId: "1:331152682033:web:5652a9b1679d35e3c03910",
+  measurementId: "G-GNNWD1EF17"
 };
 
 // Initialize Firebase
