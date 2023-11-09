@@ -28,21 +28,26 @@ function Admin() {
 
   return (
     <div className="min-h-screen text-black flex flex-col justify-center items-center border gap-4">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Usuario"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Contraseña"
-      />
-      <button onClick={handleLoginClick} className="py-1 px-4 bg-gray-600 text-white rounded-md">
-        Iniciar sesión
-      </button>
+      <div className="flex-col flex border-2 p-4 ">
+        <label>Usuario</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Usuario"
+          className="mb-2"
+        />
+        <label>Password</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Contraseña"
+        />
+        <button onClick={handleLoginClick} className="py-1 px-4 bg-gray-600 text-white rounded-md">
+          Iniciar sesión
+        </button>
+      </div>
     </div>
   );
 }
