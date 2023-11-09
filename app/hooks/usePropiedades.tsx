@@ -23,7 +23,7 @@ const usePropiedades = (): Propiedad[] => {
     return () => {
       unsubscribe(); // Limpieza cuando el componente se desmonta
     };
-  }, []); // La dependencia vacía asegura que esto se ejecute solo una vez al montar el componente
+  }, []);
 
   return propiedades;
 };
