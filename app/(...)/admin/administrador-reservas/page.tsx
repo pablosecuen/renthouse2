@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useEffect, useState } from "react";
-
 import "react-datepicker/dist/react-datepicker.css";
-
 import { Propiedad } from "@/app/types/types";
 import usePropiedades from "@/app/hooks/usePropiedades";
 import PropertyAdmin from "./components/property-admin";
-import withAuth from "@/app/HOC/withAuth";
 import DeleteReservation from "./components/delete-reservation";
 import AddReservation from "./components/add-reservation";
 
@@ -83,4 +80,4 @@ function ReservationAdministrator() {
   );
 }
 
-export default withAuth(ReservationAdministrator);
+export default ReservationAdministrator
