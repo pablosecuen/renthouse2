@@ -43,7 +43,7 @@ function ReservationAdministrator() {
   };
 
   return (
-    <div className="w-screen min-h-screen flex justify-center items-center flex-col py-10 pt-20  ">
+    <div className="w-screen min-h-screen flex justify-center items-center flex-col p-10 pt-20  ">
       <div className="mx-auto">
         <h1 className="text-center">Panel de Administrador</h1>
         <label htmlFor="propertySelect" className="text-center ">
