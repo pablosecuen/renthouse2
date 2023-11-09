@@ -83,7 +83,8 @@ function AddReservation({ selectedProperty }: any) {
   return (
     <div className="flex flex-col gap-8 border">
       <Toaster position="top-center" expand={true} richColors />
-      <h2 className="text-center">Agregar Reserva</h2>
+      <h2 className="text-center font-bold uppercase tracking-widest">Agregar Reserva</h2>
+      <span className="text-center">Seleccionar fechas</span>
       <div className="border-2">
         <label htmlFor="fromDate">Desde: </label>
         <DatePicker

@@ -64,8 +64,8 @@ function ReservationAdministrator() {
           <PropertyAdmin property={selectedProperty} />
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-8 md:w-1/2 ">
-          <div>
+        <div className="flex flex-col justify-start items-center gap-8 md:w-1/2 ">
+          <div className="md:w-1/2 md:mt-32 border p-4">
             {" "}
             <AddReservation selectedProperty={selectedProperty} />
             <DeleteReservation
@@ -80,4 +80,4 @@ function ReservationAdministrator() {
   );
 }
 
-export default ReservationAdministrator
+export default ReservationAdministrator;

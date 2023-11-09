@@ -66,11 +66,13 @@ function DeleteReservation({ selectedProperty, propiedades, setPropiedades }: an
     }
   };
   return (
-    <div className="flex flex-col gap-8 border">
+    <div className="flex flex-col gap-8 border mt-4">
       <Toaster position="top-center" expand={true} richColors />
-      <h2 className="text-center">Eliminar Reserva</h2>
-      <div>
-        <label htmlFor="selectReserva">Seleccionar Reserva: </label>
+      <h2 className="text-center font-bold uppercase tracking-widest">Eliminar Reserva</h2>
+      <div className="flex flex-col">
+        <label htmlFor="selectReserva" className="text-center pb-4">
+          Seleccionar Reserva:{" "}
+        </label>
         <select
           id="selectReserva"
           onChange={(event) => {
