@@ -41,12 +41,12 @@ function Admin() {
       .then(() => {
         // El cierre de sesión fue exitoso
         setLogoutSuccess(true);
-        alert("Cierre de sesión exitoso");
+        toast.success("Cierre de sesión exitoso");
       })
       .catch((error) => {
         // Manejo de errores en caso de fallo en el cierre de sesión
         setLogoutSuccess(false);
-        alert(`Error al cerrar sesión: ${error.message}`);
+        toast.error(`Error al cerrar sesión: ${error.message}`);
       });
   };
 

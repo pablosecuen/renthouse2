@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@fullcalendar/core": "^6.1.9",
     "@fullcalendar/daygrid": "^6.1.9",
     "@fullcalendar/react": "^6.1.9",
     "@googleapis/calendar": "^9.3.2",
     "clsx": "^2.0.0",
+    "dompurify": "^3.0.6",
     "dotenv": "^16.3.1",
+    "emailjs-com": "^3.2.0",
     "firebase": "^10.5.2",
     "gapi-script": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
@@ -33,6 +36,7 @@
     "sonner": "^1.2.0"
   },
   "devDependencies": {
+    "@types/dompurify": "^3.0.5",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^20",
     "@types/react": "^18",
