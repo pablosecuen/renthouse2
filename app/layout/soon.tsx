@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import CardContainer from "../components/card/card-container";
+import usePropiedades from "@/app/hooks/usePropiedades";
 function Soon() {
+  const propiedades = usePropiedades();
   return (
     <div className="flex flex-col w-screen items-center text-black md:py-24 py-10 md:gap-20  bg-[#f0f2f2] relative">
       <div className=" absolute bottom-0 right-0 w-full opacity-10 ">
@@ -10,7 +13,7 @@ function Soon() {
       </div>
       <h2 className="text-center tracking-widest text-3xl">Disponible en fechas proximas</h2>
       <div className="w-full flex justify-center py-10 ">
-        <CardContainer />
+      <CardContainer propiedades={propiedades}  />
       </div>
     </div>
   );

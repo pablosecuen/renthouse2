@@ -5,16 +5,16 @@ import React from "react";
 import SizeDescription from "./size-description";
 import { Propiedad } from "@/app/types/types";
 
-function Card({ propiedad }: {propiedad:Propiedad}) {
+function Card({ propiedad }: { propiedad: Propiedad }) {
   return (
-    <article className="border  h-auto md:w-96 md:h-[600px] bg-white shadow-black/20 shadow-md ">
+    <article className="border  h-auto md:w-96 md:h-[600px] bg-white shadow-black/20 shadow-md hover:-translate-y-[3px] transition duration-300 hover:shadow-2xl">
       <div>
         <Link href={`/propiedades/detalles/${propiedad.direccion.toLowerCase()}`} className="">
           <div className="">
             <Image
               width={500}
               height={400}
-              className=" w-full h-full rounded-b-3xl"
+              className=" w-full h-full rounded-b-3xl hover:scale-105 transition duration-300"
               objectFit="cover"
               src={propiedad.imagenes[0]}
               alt=""

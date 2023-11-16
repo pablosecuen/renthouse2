@@ -14,6 +14,7 @@ export interface Propiedad {
     precioPorNoche: number;
     imagenes: string[];
     distanciadelcentro: number;
+    maplocation?:string;
     caracteristicas: {
       seguridad: boolean;
       aire: boolean;

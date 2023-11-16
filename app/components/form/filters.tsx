@@ -1,6 +1,6 @@
 import React from "react";
 
-function Filters() {
+function Filters({ handleShowMap }: { handleShowMap: () => void }) {
   return (
     <div className="flex flex-col md:flex-row items-center gap-4 justify-between py-4 w-full ">
       <div className="flex items-center gap-2">
@@ -70,6 +70,7 @@ function Filters() {
         <button
           type="button"
           className="inline-flex items-center px-4 py-2 rounded-md text-md font-medium text-gray-900 bg-transparent   hover:text-gray-800 focus:z-10  focus:text-gray-800  dark:text-gray-400 dark:hover:text-black  "
+          onClick={handleShowMap}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
