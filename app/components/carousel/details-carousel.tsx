@@ -6,10 +6,12 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface CarouselProps {
   images: string[];
+  handleModalFotos: () => void;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images }) => {
+const Carousel: React.FC<CarouselProps> = ({ images, handleModalFotos }) => {
   const [index, setIndex] = useState(0);
+
   const carouselRef = useRef<HTMLDivElement>(null);
   const imageCount = images?.length;
 
@@ -39,6 +41,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   return (
     <div className="relative w-full mx-auto h-80 " ref={carouselRef}>
+      <button
+        className="absolute left-10 bottom-4 z-50 bg-gray-800 text-white/80 rounded-lg py-1  px-2"
+        onClick={handleModalFotos}
+      >
+        Todas las fotos
+      </button>
       <div
         className="overflow-x-auto md:overflow-hidden rounded-lg"
         style={{

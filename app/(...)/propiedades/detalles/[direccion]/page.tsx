@@ -7,10 +7,12 @@ import BookingForm from "@/app/components/form/booking-form";
 import PropertyCalendar from "@/app/components/calendar";
 import usePropiedades from "@/app/hooks/usePropiedades";
 import { Propiedad } from "@/app/types/types";
+import FotosModal from "@/app/components/modals/fotos-modal";
 
 function Detalles({ params }: { params: { direccion: string } }) {
   const propiedades = usePropiedades();
   const [propiedadEspecifica, setPropiedadEspecifica] = useState<Propiedad | null>(null);
+  const [modalFotos, setModalFotos] = useState(false);
 
   const decodedDireccion = decodeURIComponent(params.direccion);
   const direccionMinusculas = decodedDireccion;
@@ -25,9 +27,22 @@ function Detalles({ params }: { params: { direccion: string } }) {
 
   const caracteristicas = propiedadEspecifica?.caracteristicas;
 
+  const handleModalFotos = () => {
+    setModalFotos(!modalFotos);
+  };
+
   return (
     <div className="min-h-screen pt-20  ">
-      <DetailsCarousel images={propiedadEspecifica?.imagenes || []} />
+      <DetailsCarousel
+        images={propiedadEspecifica?.imagenes || []}
+        handleModalFotos={handleModalFotos}
+      />
+      {modalFotos && (
+        <FotosModal
+          images={propiedadEspecifica?.imagenes || []}
+          handleModalFotos={handleModalFotos}
+        />
+      )}
       <div className=" max-w-7xl mx-auto mt-4 flex flex-col">
         <nav>
           <Link href="/propiedades" className="flex uppercase tracking-widest items-center gap-2">
