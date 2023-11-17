@@ -19,7 +19,7 @@ function SearchForm(): JSX.Element {
     setFormData({ ...formData, [name]: value });
   };
   return (
-    <form className="flex gap-4 w-full justify-between flex-col md:flex-row border rounded-2xl px-4 py-2 shadow-md hover:-translate-y-1 transition duration-300 hover:shadow-xl ">
+    <form className="flex gap-4 w-full bg-white justify-between flex-col md:flex-row border rounded-2xl px-4 py-2 shadow-md hover:-translate-y-1 transition duration-300 hover:shadow-xl ">
       <div className="flex flex-col ">
         <label htmlFor="dateInput">Fecha de estadia:</label>
         <input

@@ -6,6 +6,7 @@ import emailjs from "emailjs-com";
 import { Toaster, toast } from "sonner";
 import { sanitize } from "dompurify";
 
+
 function BookingForm({ propiedad }: { propiedad: Propiedad }) {
   const [formData, setFormData] = useState({
     propiedad: propiedad.direccion,

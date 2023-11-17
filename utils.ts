@@ -100,3 +100,11 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
   
 
 
+export const carouselObject= [
+  {title: "francia", bgImage: "bg-francia", bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "quebracho", bgImage: "bg-quebracho", bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "newbery", bgImage: "bg-newbery", bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "argentino", bgImage: "bg-argentino", bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "francia1", bgImage: "bg-francia", bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+
+]

@@ -9,6 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
+        'francia': "url('/assets/francia/carouselfrancia.jpg')",
+        'quebracho': "url('/assets/quebracho/carouselquebracho.jpg')",
+        'newbery': "url('/assets/summerhouse/carouselimgnewbery.jpg')",
+        'argentino': "url('/assets/argentino/carouselargentino.jpg')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

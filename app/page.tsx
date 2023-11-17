@@ -2,6 +2,7 @@ import React from "react";
 import FeedBack from "./layout/feedback";
 import Landing from "./layout/landing";
 import Soon from "./layout/soon";
+/* import ImageCarousel from "./components/form/image-carousel"; */
 
 export default function Home() {
   return (

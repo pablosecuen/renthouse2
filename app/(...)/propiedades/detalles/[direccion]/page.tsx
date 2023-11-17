@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 "use client";
 import React, { useEffect, useState } from "react";
 import DetailsCarousel from "@/app/components/carousel/details-carousel";
@@ -30,6 +31,7 @@ function Detalles({ params }: { params: { direccion: string } }) {
   const handleModalFotos = () => {
     setModalFotos(!modalFotos);
   };
+
 
   return (
     <div className="min-h-screen pt-20  ">
