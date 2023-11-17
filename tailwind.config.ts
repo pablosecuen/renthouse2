@@ -18,6 +18,10 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
         fadeInUp: {
           '0%': {
             opacity: '0',
@@ -58,12 +62,22 @@ const config: Config = {
             transform: 'translateY(0)',
           },
         },
+        fadeOpacity: {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
       },
       animation: {
         fadeInUp: 'fadeInUp 1s ease-out',
         fadeInDown: 'fadeInDown 1s ease-out',
         fadeInRight: 'fadeInRight 1s ease-out',
         fadeInLeft: 'fadeInRight 1s ease-out',
+        fadeOpacity: 'fadeOpacity 2s  ease-out',
+        fadeIn: "fadeIn 2s ease-in-out forwards",
       },
     },
   },
