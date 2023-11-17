@@ -22,20 +22,22 @@ function Landing() {
           alt="logo"
           width={500}
           height={500}
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-fadeIn"
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/3 animate-fadeIn z-40 brightness-200"
         />{" "}
-        <h1 className="text-white uppercase text-4xl z-50 animate-fadeIn absolute top-2/3 left-1/2 -translate-x-1/2 tracking-[10px] w-full text-center ">
+        <h1 className="text-white uppercase text-4xl brightness-200  z-40 animate-fadeIn absolute top-2/3 left-1/2 -translate-x-1/2 tracking-[10px] w-full text-center ">
           Expertos en experiencias, expertos en propiedades
         </h1>
-        <ReactPlayer
-          ref={playerRef as React.MutableRefObject<ReactPlayer>}
-          url="https://www.youtube.com/watch?v=gYO1uk7vIcc"
-          loop
-          volume={1}
-          width={1920}
-          height={1040}
-          playing={true}
-        />
+        <div className="brightness-[0.25]">
+          <ReactPlayer
+            ref={playerRef as React.MutableRefObject<ReactPlayer>}
+            url="https://www.youtube.com/watch?v=gYO1uk7vIcc"
+            loop
+            volume={1}
+            width={1920}
+            height={1040}
+            playing={true}
+          />
+        </div>
       </div>
       <ImageCarousel />
       <div className="h-[90vh] bg-transparent absolute z-50 pl-20 pr-40 w-full flex flex-col md:flex-row justify-center items-center  ">

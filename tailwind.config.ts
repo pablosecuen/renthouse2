@@ -77,7 +77,7 @@ const config: Config = {
         fadeInRight: 'fadeInRight 1s ease-out',
         fadeInLeft: 'fadeInRight 1s ease-out',
         fadeOpacity: 'fadeOpacity 2s  ease-out',
-        fadeIn: "fadeIn 2s ease-in-out forwards",
+        fadeIn: "fadeIn 2s ease-in-out forwards pulse",
       },
     },
   },
