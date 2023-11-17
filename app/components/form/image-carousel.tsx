@@ -3,9 +3,12 @@ import React, { useRef } from "react";
 import "./image-carousel.css";
 import { carouselObject } from "@/utils";
 import SearchForm from "./search-form";
+import Image from "next/image";
+
 
 const ImageCarousel: React.FC = () => {
-  const sliderRef = useRef<HTMLUListElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const sliderRef = useRef<any>(null);
 
   const activate = (e: React.MouseEvent<HTMLElement>) => {
     const items = Array.from(document.querySelectorAll(".item"));
@@ -44,17 +47,26 @@ const ImageCarousel: React.FC = () => {
             </div>
           </div>
         </div>
-        <ul className="slider" ref={sliderRef}>
+        <div className="slider" ref={sliderRef}>
           {carouselObject.map((item) => (
-            <li key={item.title} className={`item  ${item.bgImage}`}></li>
+            <div key={item.title} className={`item `}>
+              <Image
+                src={item.bgImage}
+                alt={item.title}
+                width={0}
+                height={0}
+                className="h-full w-full object-cover"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
           ))}
-        </ul>
+        </div>
         <nav className="nav">
-          <span className="btn prev " onClick={activate}>
-            prev
+          <span className="btn prev text-2xl font-bold" onClick={activate}>
+            {"<"}
           </span>
-          <span className="btn next " onClick={activate}>
-            next
+          <span className="btn next text-2xl font-bold" onClick={activate}>
+            {">"}
           </span>
         </nav>
       </main>
