@@ -35,7 +35,7 @@ const Logo: React.FC<LogoProps> = ({ size }) => {
 
   return (
     <div style={{ width, height }} className="px-2 py-1">
-      <Image src={svg} alt="logo" className="h-full w-full aspect-auto" />
+      <Image src={svg} alt="logo" className="h-full w-full aspect-auto brightness-200" />
     </div>
   );
 };
