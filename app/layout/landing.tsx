@@ -40,7 +40,7 @@ function Landing() {
         </div>
       </div>
       <ImageCarousel />
-      <div className="h-[90vh] bg-transparent absolute z-50 pl-20 pr-40 w-full flex flex-col md:flex-row justify-center items-center  ">
+      <div className="h-[90vh] bg-transparent absolute z-40 pl-20 pr-40 w-full flex flex-col md:flex-row justify-center items-center  ">
         <div className="w-1/2 "></div>
       </div>
     </>
