@@ -16,7 +16,7 @@ function Landing() {
   }, []);
   return (
     <>
-      <div className="relative w-screen h-screen overflow-hidden">
+      <div className="relative w-screen h-screen overflow-hidden z-40">
         <Image
           src={logo}
           alt="logo"

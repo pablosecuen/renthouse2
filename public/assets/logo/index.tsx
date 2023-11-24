@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import svg from "./Logo.svg";
 import Image from "next/legacy/image";
