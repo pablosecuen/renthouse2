@@ -15,7 +15,7 @@ function ButtonSignIn({ handleOpenModal }: ButtonSignInProps) {
   };
 
   return (
-    <div className="w-24 h-auto md:block cursor-pointer ">
+    <div className="w-24 h-auto md:block cursor-pointer animate-fadeInLeft">
       <Image
         src={button}
         alt="boton"

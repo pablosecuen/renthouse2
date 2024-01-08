@@ -1,4 +1,3 @@
-
 import React from "react";
 import svg from "./Logo.svg";
 import Image from "next/legacy/image";
@@ -34,7 +33,7 @@ const Logo: React.FC<LogoProps> = ({ size }) => {
   }
 
   return (
-    <div style={{ width, height }} className="px-2 py-1">
+    <div style={{ width, height }} className="px-2 py-1 animate-fadeInRight">
       <Image src={svg} alt="logo" className="h-full w-full aspect-auto brightness-200" />
     </div>
   );
