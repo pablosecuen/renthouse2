@@ -25,7 +25,7 @@ const Publica = () => {
           {cardsInfo.map((card, index) => (
             <figure key={index} className="flex gap-2 h-auto pt-8 px-2 animate-fadeInDown">
               {parseSVG(card.icon)}
-              <figcaption className="flex flex-col gap-2 lg:gap-8 xl:gap-2 border-b xl:border-b-0 xl:border-r text-xs xl:text-base ">
+              <figcaption className="flex flex-col gap-2 lg:gap-8 xl:gap-2 pb-4 xl:pb-0 border-b xl:border-b-0 xl:border-r text-xs xl:text-base ">
                 <span className="text-md xl:text-lg w-auto font-semibold uppercase tracking-wider">
                   {card.title}
                 </span>
