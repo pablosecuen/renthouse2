@@ -68,11 +68,11 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ isOpen, toggleMenu, handleOpenM
           )}
         </div>
         <ul className="flex flex-col">
-          <li className={liclass}>
+          {/*     <li className={liclass}>
             <Link href="#reservar" onClick={(e) => handleNavItemClick(e, "Reservar")}>
               Reservar
             </Link>
-          </li>
+          </li> */}
           <li className={liclass}>
             <Link href="/disponibles" onClick={(e) => handleNavItemClick(e, "Disponibles")}>
               Disponibles
