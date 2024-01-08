@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import ImageCarousel from "../components/form/image-carousel";
 import ReactPlayer from "react-player/lazy";
-import logo from "@/public/assets/logo/Logo.svg";
-import Image from "next/image";
+/* import logo from "@/public/assets/logo/Logo.svg";
+import Image from "next/image"; */
 
 function Landing() {
   const playerRef = React.useRef<ReactPlayer | null>(null);
@@ -16,7 +16,7 @@ function Landing() {
   }, []);
   return (
     <>
-      <div className="relative w-screen h-screen overflow-hidden z-40">
+      {/*    <div className="relative w-screen h-screen overflow-hidden z-40">
         <Image
           src={logo}
           alt="logo"
@@ -30,7 +30,7 @@ function Landing() {
         <div className="brightness-[0.25]">
           <ReactPlayer
             ref={playerRef as React.MutableRefObject<ReactPlayer>}
-            url="https://www.youtube.com/watch?v=gYO1uk7vIcc"
+            url={require("../../public/assets/DESPEDITE.mp4")}
             loop
             volume={1}
             width={1920}
@@ -38,7 +38,7 @@ function Landing() {
             playing={true}
           />
         </div>
-      </div>
+      </div> */}
       <ImageCarousel />
       <div className="h-[90vh] bg-transparent absolute z-40 pl-20 pr-40 w-full flex flex-col md:flex-row justify-center items-center  ">
         <div className="w-1/2 "></div>
