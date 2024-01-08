@@ -21,7 +21,6 @@ function Propiedades() {
     <div className="min-h-screen h-full pt-24 flex-col flex justify-center px-8">
       <h2 className="tracking-widest py-8 text-3xl font-semibold ">PROPIEDADES</h2>
       <div className="flex flex-col md:flex-row md:gap-4">
-        {" "}
         <div
           className={
             showmap

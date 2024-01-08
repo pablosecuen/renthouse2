@@ -1,9 +1,7 @@
 "use client";
 import Image from "next/legacy/image";
 import React, { useEffect, useRef, useState } from "react";
-
 import foto from "@/public/assets/Rectangle 7.png";
-
 import Link from "next/link";
 
 function BestSellers() {

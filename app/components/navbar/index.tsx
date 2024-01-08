@@ -13,6 +13,7 @@ import Image from "next/legacy/image";
 import { useSession, signOut } from "next-auth/react";
 import Modal from "../modals/sign-in";
 import { Toaster, toast } from "sonner";
+import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -21,6 +22,8 @@ const Navbar: React.FC = () => {
   const [showWelcome, setShowWelcome] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
+  const pathname = usePathname();
+  const isExperienciasRoute = pathname === "/experiencias";
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen(!isMenuOpen);
@@ -84,7 +87,13 @@ const Navbar: React.FC = () => {
   return (
     <nav>
       <Toaster position="top-center" expand={true} richColors />
-      <div className="z-50 xs:h-full fixed  font-semibold md:text-lg w-full tracking-wide px-8  flex items-center justify-between align-middle lg:pr-8 bg-metal2 bg-center bg-contain backdrop-blur-3xl bg-white">
+      <div
+        className={`z-50 xs:h-full fixed font-semibold md:text-lg w-full tracking-wide px-8 flex items-center justify-between align-middle lg:pr-8 ${
+          isExperienciasRoute
+            ? "bg-transparent text-white absolute "
+            : "bg-metal2 bg-center bg-contain backdrop-blur-3xl bg-white"
+        }`}
+      >
         <div className="hidden md:block md:w-1/3">
           <Link href="/">
             {" "}
@@ -97,7 +106,13 @@ const Navbar: React.FC = () => {
 
         <NavnarMenuDesktop />
 
-        <div className="hidden sm:flex sm:justify-end sm:w-1/3">
+        <div
+          className={`hidden sm:flex sm:justify-end sm:w-1/3 ${
+            isExperienciasRoute ? "text-white" : ""
+          }`}
+        >
+          {/*...*/}
+
           {session?.user ? (
             <div
               className="flex relative gap-x-2 items-center"
@@ -135,11 +150,9 @@ const Navbar: React.FC = () => {
               </div>
             </div>
           ) : (
-            <>
-              <div className="hidden md:block">
-                <ButtonSignIn handleOpenModal={handleOpenModal} />
-              </div>
-            </>
+            <div className="hidden md:block">
+              <ButtonSignIn handleOpenModal={handleOpenModal} />
+            </div>
           )}
         </div>
 

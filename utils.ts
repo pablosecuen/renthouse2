@@ -88,7 +88,7 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
     },
     {
       question: "¿Debo presentar documento de identidad o pasaporte?",
-      answer: "Según las leyes vigentes para alquileres temporales en la Ciudad de Buenos Aires, todos los huéspedes deben presentar documento o pasaporte para ser inscritos en el libro de visitas. Esta es una condición, sin excepción, que se aplica a todos los huéspedes, independientemente del canal a través del cual reservan (nuestro sitio web, Airbnb, Booking.com, VRBO u otro)."
+      answer: "Según las leyes vigentes para alquileres temporarios, todos los huéspedes deben presentar documento o pasaporte para ser inscritos en el libro de visitas. Esta es una condición, sin excepción, que se aplica a todos los huéspedes, independientemente del canal a través del cual reservan (nuestro sitio web, Airbnb, Booking.com, VRBO u otro)."
     },
     {
       question: "¿Qué es la política de cancelación de Rent House?",

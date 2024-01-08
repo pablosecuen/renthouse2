@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+import Image from "next/image";
 import React from "react";
+import wsp from "@/public/assets/logowsp.png";
 
 function FeedBack() {
   return (
@@ -19,15 +21,17 @@ function FeedBack() {
             <p className="my-4">"Breve descripcion"</p>
           </blockquote>
           <figcaption className="flex items-center justify-center space-x-3">
-            <img
-              className="rounded-full w-9 h-9"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
-              alt="profile picture"
-            />
             <div className="space-y-0.5 font-medium text-black text-left">
               <div>Bonnie Green</div>
               <div className="text-sm text-gray-800 ">Developer de Open AI</div>
             </div>
+            <Image
+              height={0}
+              width={0}
+              className="rounded-full w-16 h-auto"
+              src={wsp}
+              alt="profile picture"
+            />
           </figcaption>
         </figure>
         <figure className="flex flex-col items-center md:w-96  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">

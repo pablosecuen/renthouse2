@@ -5,7 +5,6 @@ import { carouselObject } from "@/utils";
 import SearchForm from "./search-form";
 import Image from "next/image";
 
-
 const ImageCarousel: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sliderRef = useRef<any>(null);
@@ -33,7 +32,7 @@ const ImageCarousel: React.FC = () => {
               <h1>
                 Reserva una propiedad
                 <br />
-                para tu alquiler temporal
+                para tu alquiler temporario
                 <br />
                 en Rosario
               </h1>
