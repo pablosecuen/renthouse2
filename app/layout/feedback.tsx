@@ -15,15 +15,16 @@ function FeedBack() {
       </div>
 
       <div className="flex md:w-full gap-4 md:gap-20 flex-col md:flex-row justify-center">
-        <figure className="flex flex-col items-center md:w-96 w-64  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
+        <figure className="flex flex-col items-center md:w-96 w-64  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20 relative">
           <blockquote className="max-w-2xl mx-auto mb-4 text-gray-800 lg:mb-8 ">
-            <h3 className="text-lg font-semibold ">Palabra clave</h3>
-            <p className="my-4">"Breve descripcion"</p>
+            <p className="my-4 italic">
+              "¡Experiencia increíble con RentHouse! Se ocuparon de todo, desde las fotos hasta las
+              reservas."
+            </p>
           </blockquote>
-          <figcaption className="flex items-center justify-center space-x-3">
+          <figcaption className="flex items-center justify-center space-x-3 absolute bottom-4">
             <div className="space-y-0.5 font-medium text-black text-left">
-              <div>Bonnie Green</div>
-              <div className="text-sm text-gray-800 ">Developer de Open AI</div>
+              <div>Carlos de Buenos Aires</div>
             </div>
             <Image
               height={0}
@@ -34,38 +35,44 @@ function FeedBack() {
             />
           </figcaption>
         </figure>
-        <figure className="flex flex-col items-center md:w-96  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
+        <figure className="flex flex-col items-center md:w-96  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20 relative">
           <blockquote className="max-w-2xl mx-auto mb-4 text-gray-800 lg:mb-8 ">
-            <h3 className="text-lg font-semibold ">Palabra clave</h3>
-            <p className="my-4">"Breve descripcion"</p>
+            <p className="my-4 italic">
+              {" "}
+              "Su equipo de limpieza y mantenimiento es excepcional. Recomendado 100%."
+            </p>
           </blockquote>
-          <figcaption className="flex items-center justify-center space-x-3">
-            <img
-              className="rounded-full w-9 h-9"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+          <figcaption className="flex items-center justify-center space-x-3 absolute bottom-4">
+            <div className="space-y-0.5 font-medium text-black text-left">
+              <div>María de Rosario</div>
+            </div>
+            <Image
+              height={0}
+              width={0}
+              className="rounded-full w-16 h-auto"
+              src={wsp}
               alt="profile picture"
             />
-            <div className="space-y-0.5 font-medium text-black text-left">
-              <div>Bonnie Green</div>
-              <div className="text-sm text-gray-800 ">Developer de Open AI</div>
-            </div>
           </figcaption>
         </figure>
-        <figure className="flex flex-col items-center md:w-96  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
+        <figure className="flex flex-col items-center md:w-96  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20 relative">
           <blockquote className="max-w-2xl mx-auto mb-4 text-gray-800 lg:mb-8 ">
-            <h3 className="text-lg font-semibold ">Palabra clave</h3>
-            <p className="my-4">"Breve descripcion"</p>
+            <p className="my-4 italic">
+              "Elegir RentHouse fue la mejor decisión. Mi casa siempre está impecable y los ingresos
+              superaron mis expectativas. ¡Son los mejores en el mercado de alquiler temporario!"
+            </p>
           </blockquote>
-          <figcaption className="flex items-center justify-center space-x-3">
-            <img
-              className="rounded-full w-9 h-9"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+          <figcaption className="flex items-center justify-center space-x-3 absolute bottom-4">
+            <div className="space-y-0.5 font-medium text-black text-left  ">
+              <div>Sofía de Funes</div>
+            </div>
+            <Image
+              height={0}
+              width={0}
+              className="rounded-full w-16 h-auto"
+              src={wsp}
               alt="profile picture"
             />
-            <div className="space-y-0.5 font-medium text-black text-left">
-              <div>Bonnie Green</div>
-              <div className="text-sm text-gray-800 ">Developer de Open AI</div>
-            </div>
           </figcaption>
         </figure>
       </div>
