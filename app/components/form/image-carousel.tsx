@@ -24,8 +24,12 @@ const ImageCarousel: React.FC = () => {
 
   return (
     <article className="">
-      <main className=" min-h-screen w-screen">
-        <div className="separador ">
+      <main className=" min-h-screen w-screen relative">
+        <video autoPlay loop muted className="w-full h-full object-cover absolute ">
+          <source src="/assets/DESPEDITE.mp4" type="video/mp4" />
+          {/* Puedes agregar más sources para diferentes formatos de video */}
+        </video>
+        <div className="separador absolute z-40">
           {" "}
           <div className="md:w-full flex flex-col gap-8">
             <div className="flex flex-col md:text-5xl text-xl pt-16 font-semibold animate-fadeInUp">
@@ -59,15 +63,15 @@ const ImageCarousel: React.FC = () => {
               />
             </div>
           ))}
+          <nav className="nav">
+            <span className="btn prev text-2xl font-bold" onClick={activate}>
+              {"<"}
+            </span>
+            <span className="btn next text-2xl font-bold" onClick={activate}>
+              {">"}
+            </span>
+          </nav>
         </div>
-        <nav className="nav">
-          <span className="btn prev text-2xl font-bold" onClick={activate}>
-            {"<"}
-          </span>
-          <span className="btn next text-2xl font-bold" onClick={activate}>
-            {">"}
-          </span>
-        </nav>
       </main>
     </article>
   );
