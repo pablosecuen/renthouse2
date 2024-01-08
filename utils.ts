@@ -48,7 +48,7 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
 
 
   export const tabs = [
-    { label: "Reservar", href: "/reservar" },
+/*     { label: "Reservar", href: "/reservar" }, */
     { label: "Disponibles", href: "/propiedades", onClick: "propiedades" },
     { label: "Experiencias", href: "/experiencias", onClick: "experiencias" },
     { label: "Publica tu casa", href: "/publicatucasa", onClick: "publica tu casa" },
