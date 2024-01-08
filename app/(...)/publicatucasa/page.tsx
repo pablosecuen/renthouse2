@@ -17,15 +17,15 @@ const Publica = () => {
             alt=""
             width={0}
             height={0}
-            className="w-full  h-64 sm:h-screen object-cover brightness-110 "
+            className="w-full  h-64 sm:h-screen object-cover brightness-110 animate-fadeInRight"
           />
         </div>
         <div className="grid xl:grid-cols-2 mx-auto">
           {/* cards beneficios */}
           {cardsInfo.map((card, index) => (
-            <figure key={index} className="flex gap-2 h-auto pt-8 px-2 ">
+            <figure key={index} className="flex gap-2 h-auto pt-8 px-2 animate-fadeInDown">
               {parseSVG(card.icon)}
-              <figcaption className="flex flex-col gap-2 lg:gap-8 xl:gap-2 border-b xl:border-b-0 xl:border-r text-xs xl:text-base">
+              <figcaption className="flex flex-col gap-2 lg:gap-8 xl:gap-2 border-b xl:border-b-0 xl:border-r text-xs xl:text-base ">
                 <span className="text-md xl:text-lg w-auto font-semibold uppercase tracking-wider">
                   {card.title}
                 </span>
