@@ -19,8 +19,8 @@ function page() {
       </div>
 
       <div className="md:max-w-7xl p-4 xs:mx-10 lg:mx-0 flex flex-col gap-8 animate-fadeInUp">
-        <h2 className="text-2xl font-bold">Experiencias Rent-house</h2>
-        <p className="uppercase tracking-wider text-xs md:text-base">
+        <h2 className="text-xl font-bold">Experiencias Rent-house</h2>
+        <p className=" tracking-wider text-xs md:text-lg">
           Rosario, conocida como 'La Perla del Paraná', es una ciudad vibrante que encierra en cada
           rincón una riqueza cultural y una historia fascinante. Es un crisol de experiencias que
           van desde su imponente arquitectura hasta su rica vida nocturna. Esta ciudad ha florecido
