@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
     <nav>
       <Toaster position="top-center" expand={true} richColors />
       <div
-        className={`z-50 xs:h-full fixed font-semibold md:text-lg w-full tracking-wide px-8 flex items-center justify-between align-middle lg:pr-8 ${
+        className={`z-50 xs:h-full fixed font-semibold md:text-md w-full tracking-wide px-8 flex items-center justify-between align-middle lg:pr-8 ${
           isExperienciasRoute
             ? "bg-transparent text-white absolute "
             : "bg-metal2 bg-center bg-contain backdrop-blur-3xl bg-white"

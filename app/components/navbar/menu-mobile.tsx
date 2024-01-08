@@ -84,6 +84,11 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ isOpen, toggleMenu, handleOpenM
             </Link>
           </li>
           <li className={liclass}>
+            <Link href="/publicatucasa" onClick={(e) => handleNavItemClick(e, "Publica tu casa")}>
+              Publica tu casa
+            </Link>
+          </li>
+          <li className={liclass}>
             <Link href="#tutoriales" onClick={(e) => handleNavItemClick(e, "Contacto")}>
               Contacto
             </Link>
