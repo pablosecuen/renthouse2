@@ -94,15 +94,29 @@ const Navbar: React.FC = () => {
             : "bg-metal2 bg-center bg-contain backdrop-blur-3xl bg-white"
         }`}
       >
-        <div className="hidden md:block md:w-1/3">
-          <Link href="/">
-            {" "}
-            <Logo size="lg" />
-          </Link>
-        </div>
-        <div className="md:hidden block md:w-1/3">
-          <Logo size="md" />
-        </div>
+        {isExperienciasRoute ? (
+          <>
+            <div className="hidden md:block md:w-1/3">
+              <Link href="/">
+                <Logo size="lg" color="blanco" />
+              </Link>
+            </div>
+            <div className="md:hidden block md:w-1/3">
+              <Logo size="md" color="blanco" />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="hidden md:block md:w-1/3">
+              <Link href="/">
+                <Logo size="lg" />
+              </Link>
+            </div>
+            <div className="md:hidden block md:w-1/3">
+              <Logo size="md" />
+            </div>
+          </>
+        )}
 
         <NavnarMenuDesktop />
 
