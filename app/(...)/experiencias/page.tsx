@@ -44,7 +44,7 @@ function page() {
         </p>
       </div>
 
-      <div className="flex  md:w-full md:py-20 py-10 md:mx-10 gap-4 md:gap-4 flex-col md:flex-row justify-center items-center w-full flex-wrap md:pb-20">
+      <div className="  md:w-full max-w-7xl grid md:grid-cols-2 md:py-20 py-10 md:mx-10 gap-4 md:gap-4  place-content-center place-items-center md:flex-row justify-center items-center w-full flex-wrap md:pb-20">
         <figure className="animate-fadeInRight flex flex-col items-center md:w-96 h-80 w-11/12  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
           <blockquote className="max-w-2xl mx-auto mb-4 text-gray-800 lg:mb-8 ">
             <h3 className="md:text-lg font-semibold capitalize">fútbol</h3>

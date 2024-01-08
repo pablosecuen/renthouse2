@@ -24,11 +24,7 @@ function ButtonSignIn({ handleOpenModal }: ButtonSignInProps) {
         onClick={handleOpenModal}
         className="border h-auto"
       />
-      {isModalOpen && (
-        <>
-          <Modal onClose={handleCloseModal} />
-        </>
-      )}
+      {isModalOpen && <Modal onClose={handleCloseModal} />}
     </div>
   );
 }
