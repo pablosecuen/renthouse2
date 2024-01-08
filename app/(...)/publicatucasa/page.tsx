@@ -10,7 +10,7 @@ const parseSVG = (svgText: string) => {
 const Publica = () => {
   return (
     <div className="min-h-screen h-full  xl:p-24 xl:px-8 pt-12 flex flex-col justify-center items-center gap-10">
-      <div className="grid xl:grid-cols-2 xl:px-24">
+      <div className="grid xl:grid-cols-2 xl:px-24 gap-8">
         <div className="mb-6 sm:mb-0">
           <Image
             src={house}
