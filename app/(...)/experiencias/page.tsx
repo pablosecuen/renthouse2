@@ -18,9 +18,9 @@ function page() {
         />
       </div>
 
-      <div className="max-w-7xl flex flex-col gap-8 animate-fadeInUp">
+      <div className="md:max-w-7xl p-4 xs:mx-10 lg:mx-0 flex flex-col gap-8 animate-fadeInUp">
         <h2 className="text-2xl font-bold">Experiencias Rent-house</h2>
-        <p className="uppercase tracking-wider">
+        <p className="uppercase tracking-wider text-xs md:text-base">
           Rosario, conocida como 'La Perla del Paraná', es una ciudad vibrante que encierra en cada
           rincón una riqueza cultural y una historia fascinante. Es un crisol de experiencias que
           van desde su imponente arquitectura hasta su rica vida nocturna. Esta ciudad ha florecido
@@ -44,11 +44,11 @@ function page() {
         </p>
       </div>
 
-      <div className="flex md:w-full max-w-7xl gap-4 md:gap-20 flex-col md:flex-row justify-center flex-wrap md:pb-20">
-        <figure className="animate-fadeInRight flex flex-col items-center md:w-[400px] w-64  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
+      <div className="flex  md:w-full md:py-20 py-10 md:mx-10 gap-4 md:gap-4 flex-col md:flex-row justify-center items-center w-full flex-wrap md:pb-20">
+        <figure className="animate-fadeInRight flex flex-col items-center md:w-96 h-80 w-11/12  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
           <blockquote className="max-w-2xl mx-auto mb-4 text-gray-800 lg:mb-8 ">
-            <h3 className="text-lg font-semibold capitalize">fútbol</h3>
-            <p className="mt-4 italic">
+            <h3 className="md:text-lg font-semibold capitalize">fútbol</h3>
+            <p className="mt-4 italic md:text-base text-xs">
               "Vive la emoción del fútbol en Rosario asistiendo a un apasionante partido de Rosario
               Central o Newell's Old Boys. Siente la energía de la multitud y la pasión del deporte
               más amado de Argentina en un ambiente vibrante y emocionante."
@@ -65,10 +65,10 @@ function page() {
             />
           </div>
         </figure>{" "}
-        <figure className="animate-fadeInDown flex flex-col items-center md:w-[400px] w-64  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
+        <figure className="animate-fadeInDown flex flex-col items-center md:w-96 h-80  w-11/12  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
           <blockquote className="max-w-2xl mx-auto mb-4 text-gray-800 lg:mb-8 ">
-            <h3 className="text-lg font-semibold capitalize">Gastronomía</h3>
-            <p className="mt-4 italic">
+            <h3 className="md:text-lg font-semibold capitalize">Gastronomía</h3>
+            <p className="mt-4 italic md:text-base text-xs">
               " Embárcate en una aventura gastronómica nocturna por Rosario. Visita los tres mejores
               restaurantes de la ciudad, cada uno ofreciendo una experiencia culinaria única y
               exquisita, donde los sabores locales e internacionales se fusionan para deleitar tu
@@ -86,10 +86,10 @@ function page() {
             />
           </div>
         </figure>{" "}
-        <figure className="animate-fadeInLeft flex flex-col items-center md:w-[400px] w-64  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
+        <figure className="animate-fadeInLeft flex flex-col items-center md:w-96 h-80 w-11/12  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
           <blockquote className="max-w-2xl mx-auto mb-4 text-gray-800 lg:mb-8 ">
-            <h3 className="text-lg font-semibold capitalize">Naturaleza</h3>
-            <p className="mt-4 italic">
+            <h3 className="md:text-lg font-semibold capitalize">Naturaleza</h3>
+            <p className="mt-4 italic md:text-base text-xs">
               "Descubre la serenidad y la belleza natural en una escapada All Inclusive a la Isla.
               Relájate y disfruta del confort y la comodidad con un servicio completo, desde el
               traslado hasta la gastronomía, en un entorno tranquilo y encantador."
@@ -106,10 +106,10 @@ function page() {
             />
           </div>
         </figure>{" "}
-        <figure className="animate-fadeInUp flex flex-col items-center md:w-[400px] w-64  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
+        <figure className="animate-fadeInUp flex flex-col items-center md:w-96 h-80 w-11/12  justify-center p-8 text-center   border-gray-200   bg-white dark:border-gray-700 border  rounded-xl shadow-xl shadow-black/20">
           <blockquote className="max-w-2xl mx-auto mb-4 text-gray-800 lg:mb-8 ">
-            <h3 className="text-lg font-semibold capitalize">Vida Nocturna</h3>
-            <p className="mt-4 italic">
+            <h3 className="md:text-lg font-semibold capitalize">Vida Nocturna</h3>
+            <p className="mt-4 italic md:text-base text-xs">
               " Experimenta la mejor vida nocturna de Rosario con una salida VIP a los boliches más
               exclusivos. Disfruta de una noche inolvidable con atención de primera clase, música
               vibrante y un ambiente elegante y emocionante."

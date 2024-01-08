@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <Link
             href="https://wa.me/3413892132"
-            className="fixed bottom-10 right-10 z-50 bg-white rounded-full"
+            className="fixed bottom-10 right-10 z-50 bg-white px-4 md:px-0 rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
