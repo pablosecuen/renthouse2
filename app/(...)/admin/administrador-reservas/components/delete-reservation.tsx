@@ -93,22 +93,20 @@ function DeleteReservation({ selectedProperty, propiedades, setPropiedades }: an
 
             if (startDate && endDate) {
               return (
-                <>
-                  <option
-                    key={index}
-                    value={startDate}
-                    selected={selectedReserva?.start.seconds === startDate}
-                  >
-                    Start:{" "}
-                    {`${new Date(startDate * 1000).getMonth() + 1}/
+                <option
+                  key={index}
+                  value={startDate}
+                  selected={selectedReserva?.start.seconds === startDate}
+                >
+                  Start:{" "}
+                  {`${new Date(startDate * 1000).getMonth() + 1}/
             ${new Date(startDate * 1000).getDate()}/
             ${new Date(startDate * 1000).getFullYear()}`}{" "}
-                    - End:{" "}
-                    {`${new Date(endDate * 1000).getMonth() + 1}/
+                  - End:{" "}
+                  {`${new Date(endDate * 1000).getMonth() + 1}/
             ${new Date(endDate * 1000).getDate()}/
             ${new Date(endDate * 1000).getFullYear()}`}
-                  </option>
-                </>
+                </option>
               );
             }
             return null;
