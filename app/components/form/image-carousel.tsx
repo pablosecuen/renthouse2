@@ -4,6 +4,7 @@ import "./image-carousel.css";
 import { carouselObject } from "@/utils";
 import SearchForm from "./search-form";
 import Image from "next/image";
+import Logo from "@/public/assets/logo";
 
 const ImageCarousel: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,10 +25,22 @@ const ImageCarousel: React.FC = () => {
 
   return (
     <article className="">
-      <main className=" min-h-screen w-screen relative">
-        <video autoPlay loop muted className="w-full h-full object-cover absolute ">
+      <main className=" min-h-screen w-screen relative ">
+        <div className="relative  w-full h-full md:hidden">
+          <div className="w-full h-full absolute top-0 left-0 bg-black/60 z-30 md:hidden">
+            <div className="flex flex-col justify-center items-center w-full h-full gap-2">
+              <Logo size="xl" color="blanco" />
+              <span className="text-white/70 uppercase tracking-widest text-xs">
+                expertos en experiencias
+              </span>
+            </div>
+          </div>
+          <video autoPlay loop muted className="w-full h-full object-cover absolute ">
+            <source src="/assets/DESPEDITE.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <video autoPlay loop muted className="w-full h-full object-cover absolute hidden lg:block">
           <source src="/assets/DESPEDITE.mp4" type="video/mp4" />
-          {/* Puedes agregar más sources para diferentes formatos de video */}
         </video>
         <div className="separador absolute z-40">
           {" "}
@@ -50,7 +63,7 @@ const ImageCarousel: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="slider" ref={sliderRef}>
+        <div className="hidden md:flex" ref={sliderRef}>
           {carouselObject.map((item) => (
             <div key={item.title} className={`item `}>
               <Image
