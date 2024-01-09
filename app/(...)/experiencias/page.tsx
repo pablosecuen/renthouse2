@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import rosario from "@/public/assets/rosario-turismo.webp";
 import wsp from "@/public/assets/logowsp.png";
-import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
+
 
 const Experiencias = () => {
   return (
@@ -132,4 +132,4 @@ const Experiencias = () => {
   );
 };
 
-export default withGoogleAnalytics(Experiencias);
+export default Experiencias;
