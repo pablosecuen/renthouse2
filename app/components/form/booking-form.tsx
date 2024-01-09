@@ -6,7 +6,6 @@ import emailjs from "emailjs-com";
 import { Toaster, toast } from "sonner";
 import { sanitize } from "dompurify";
 
-
 function BookingForm({ propiedad }: { propiedad: Propiedad }) {
   const [formData, setFormData] = useState({
     propiedad: propiedad.direccion,
@@ -34,9 +33,9 @@ function BookingForm({ propiedad }: { propiedad: Propiedad }) {
     }
 
     const emailJsParams = {
-      serviceId: "service_nqjiqvn",
-      templateId: "template_u4q8tfd",
-      userId: "CYXPQCplILNR43XNO",
+      serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+      templateId: process.env.NEXT_PUBLIC_EMAILJS_INSTANTBOOKING_ID as string,
+      userId: process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
     };
     const bookingInstantValue = formData.isBookingInstant ? "Sí" : "No";
     emailjs

@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import house from "@/public/assets/argentino/DPD - BV ARGENTINO-66.webp";
 import { cardsInfo } from "@/utils";
+import PublishForm from "./form/publica-tu-casa-form";
+import { Toaster } from "sonner";
 
 const parseSVG = (svgText: string) => {
   return <div dangerouslySetInnerHTML={{ __html: svgText }} />;
@@ -10,6 +12,7 @@ const parseSVG = (svgText: string) => {
 const Publica = () => {
   return (
     <div className="min-h-screen h-full  xl:p-24 xl:px-8 pt-12 flex flex-col justify-center items-center gap-10">
+      <Toaster position="top-center" expand={true} richColors />
       <div className="grid xl:grid-cols-2 xl:px-24 gap-8">
         <div className="mb-6 sm:mb-0">
           <Image
@@ -35,7 +38,9 @@ const Publica = () => {
           ))}
         </div>
       </div>
-      <div className="grid xl:grid-cols-2"></div>
+      <div className="flex justify-center items-center lg:w-1/2 w-full p-8 lg:p-0 border lg:border-0 ">
+        <PublishForm />
+      </div>
     </div>
   );
 };
