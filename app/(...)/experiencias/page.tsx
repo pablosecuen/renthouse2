@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import rosario from "@/public/assets/rosario-turismo.webp";
 import wsp from "@/public/assets/logowsp.png";
+import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
 
 function page() {
   return (
@@ -131,4 +132,4 @@ function page() {
   );
 }
 
-export default page;
+export default withGoogleAnalytics(page);

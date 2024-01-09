@@ -9,6 +9,7 @@ import PropertyCalendar from "@/app/components/calendar";
 import usePropiedades from "@/app/hooks/usePropiedades";
 import { Propiedad } from "@/app/types/types";
 import FotosModal from "@/app/components/modals/fotos-modal";
+import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
 
 function Detalles({ params }: { params: { direccion: string } }) {
   const propiedades = usePropiedades();
@@ -31,7 +32,6 @@ function Detalles({ params }: { params: { direccion: string } }) {
   const handleModalFotos = () => {
     setModalFotos(!modalFotos);
   };
-
 
   return (
     <div className="min-h-screen pt-20  ">
@@ -157,4 +157,4 @@ function Detalles({ params }: { params: { direccion: string } }) {
   );
 }
 
-export default Detalles;
+export default withGoogleAnalytics(Detalles);

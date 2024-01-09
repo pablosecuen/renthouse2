@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "sonner";
+import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
 
 function Contacto() {
   const [formData, setFormData] = useState({
@@ -141,4 +142,4 @@ function Contacto() {
   );
 }
 
-export default Contacto;
+export default withGoogleAnalytics(Contacto);
