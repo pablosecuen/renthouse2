@@ -4,7 +4,6 @@ import { Propiedad } from "@/app/types/types";
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { Toaster, toast } from "sonner";
-import { sanitize } from "dompurify";
 
 function BookingForm({ propiedad }: { propiedad: Propiedad }) {
   const [formData, setFormData] = useState({
@@ -43,12 +42,12 @@ function BookingForm({ propiedad }: { propiedad: Propiedad }) {
         emailJsParams.serviceId,
         emailJsParams.templateId,
         {
-          direccion: sanitize(propiedad?.direccion || ""),
-          checkInDate: sanitize(formData.checkInDate),
-          checkOutDate: sanitize(formData.checkOutDate),
-          huespedes: sanitize(formData.huespedes.toString()),
-          email: sanitize(formData.email),
-          name: sanitize(formData.name),
+          direccion: propiedad?.direccion,
+          checkInDate: formData.checkInDate,
+          checkOutDate: formData.checkOutDate,
+          huespedes: formData.huespedes.toString(),
+          email: formData.email,
+          name: formData.name,
           isBookingInstant: bookingInstantValue,
         },
         emailJsParams.userId
@@ -92,6 +91,7 @@ function BookingForm({ propiedad }: { propiedad: Propiedad }) {
             className="w-1/2 text-right"
             value={formData.checkInDate}
             onChange={handleInputChange}
+                 required
           />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
@@ -105,6 +105,7 @@ function BookingForm({ propiedad }: { propiedad: Propiedad }) {
             name="checkOutDate"
             value={formData.checkOutDate}
             onChange={handleInputChange}
+                 required
           />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
@@ -119,6 +120,7 @@ function BookingForm({ propiedad }: { propiedad: Propiedad }) {
             name="huespedes"
             placeholder="1"
             onChange={handleInputChange}
+                 required
           />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
@@ -131,8 +133,9 @@ function BookingForm({ propiedad }: { propiedad: Propiedad }) {
             name="email"
             id="email"
             type="email"
-            placeholder="Ingresa tu mail"
+            placeholder="Ingresa tu email"
             onChange={handleInputChange}
+                 required
           />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
@@ -147,6 +150,7 @@ function BookingForm({ propiedad }: { propiedad: Propiedad }) {
             type="text"
             placeholder="Tu nombre"
             onChange={handleInputChange}
+            required
           />
         </div>
         <div className="border rounded-xl flex justify-between p-2 gap-4">
