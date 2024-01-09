@@ -5,7 +5,7 @@ import rosario from "@/public/assets/rosario-turismo.webp";
 import wsp from "@/public/assets/logowsp.png";
 import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
 
-function Experiencias() {
+const Experiencias = () => {
   return (
     <div className="min-h-screen h-full pt-24 flex-col gap-8 flex justify-start items-center ">
       <div className="w-screen h-full border relative -p-8 -mt-28 z-20 animate-fadeIn">
@@ -130,6 +130,6 @@ function Experiencias() {
       </div>
     </div>
   );
-}
+};
 
 export default withGoogleAnalytics(Experiencias);
