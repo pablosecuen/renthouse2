@@ -1,7 +1,11 @@
-import francia from "/public/assets/francia/carouselfrancia.jpg"
-import quebracho from "/public/assets/quebracho/carouselquebracho.jpg"
-import newbery from "/public/assets/summerhouse/carouselimgnewbery.jpg"
-import argentino from "/public/assets/argentino/carouselargentino.jpg"
+import francia from "/public/assets/francia/carouselfrancia.webp"
+import francia2 from "/public/assets/francia/carouselfrancia2.webp"
+import quebracho from "/public/assets/quebracho/carouselquebracho.webp"
+import quebracho2 from "/public/assets/quebracho/carouselquebracho2.webp"
+import newbery from "/public/assets/summerhouse/carouselimgnewbery.webp"
+import newbery2 from "/public/assets/summerhouse/carouselimgnewbery2.webp"
+import argentino from "/public/assets/argentino/carouselargentino.webp"
+import argentino2 from "/public/assets/argentino/carouselargentino2.webp"
 
 export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
     event.preventDefault();
@@ -105,10 +109,14 @@ export const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, Mo
 
 export const carouselObject= [
   {title: "francia", bgImage: francia, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
-  {title: "quebracho", bgImage: quebracho, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
-  {title: "newbery", bgImage: newbery, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "francia2", bgImage: francia2, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
   {title: "argentino", bgImage: argentino, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
-  {title: "francia1", bgImage: francia, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "argentino2", bgImage: argentino2, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "quebracho", bgImage: quebracho, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "quebracho2", bgImage: quebracho2, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "newbery", bgImage: newbery, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+  {title: "newbery2", bgImage: newbery2, bgVideo: "https://www.youtube.com/embed/dU_iqqkUAEc?mute=1"},
+ 
 
 ]
 

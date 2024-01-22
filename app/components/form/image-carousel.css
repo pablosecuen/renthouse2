@@ -39,6 +39,7 @@ main .item {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.1);
   transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
 }
 main .item:nth-child(1),
@@ -94,45 +95,6 @@ main .nav .btn {
 }
 main .nav .btn:hover {
   background-color: rgba(255, 255, 255, 0.3);
-}
-
-@media (width > 650px) and (width < 900px) {
-  .item {
-    width: 160px;
-    height: 270px;
-  }
-  .item:nth-child(3) {
-    left: 50%;
-  }
-  .item:nth-child(4) {
-    left: calc(50% + 170px);
-  }
-  .item:nth-child(5) {
-    left: calc(50% + 340px);
-  }
-  .item:nth-child(6) {
-    left: calc(50% + 510px);
-    opacity: 0;
-  }
-}
-@media (width < 650px) {
-  .item {
-    width: 130px;
-    height: 220px;
-  }
-  .item:nth-child(3) {
-    left: 50%;
-  }
-  .item:nth-child(4) {
-    left: calc(50% + 140px);
-  }
-  .item:nth-child(5) {
-    left: calc(50% + 280px);
-  }
-  .item:nth-child(6) {
-    left: calc(50% + 420px);
-    opacity: 0;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
