@@ -32,7 +32,7 @@ const Publica = () => {
                 <span className="text-md xl:text-lg w-auto font-semibold uppercase tracking-wider">
                   {card.title}
                 </span>
-                <p className="lowercase pr-2"> {card.description}</p>
+                <p className=" pr-4"> {card.description}</p>
               </figcaption>
             </figure>
           ))}

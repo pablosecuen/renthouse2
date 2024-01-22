@@ -70,12 +70,18 @@ function NavnarMenuDesktop() {
             >
               <ul className="py-2 text-sm text-gray-700" aria-labelledby="dropdownHoverButton">
                 <li className="w-full hover:bg-gray-100 h-full">
-                  <a href="/contacto" className="block px-4 py-2 w-full hover:bg-gray-100  ">
+                  <a
+                    href="/contacto#nosotros"
+                    className="block px-4 py-2 w-full hover:bg-gray-100  "
+                  >
                     Sobre Nosotros
                   </a>
                 </li>
                 <li>
-                  <a href="/contacto" className="block px-4 py-2 w-full hover:bg-gray-100  ">
+                  <a
+                    href="/contacto#formulario"
+                    className="block px-4 py-2 w-full hover:bg-gray-100  "
+                  >
                     Contacto
                   </a>
                 </li>

@@ -121,7 +121,7 @@ export const carouselObject= [
         </svg>
       `,
       title: "Equipamiento",
-      description: "NOS ENCARGAMOS DE EQUIPAR TU PROPIEDAD SIGUIENDO LAS ULTIMAS TENDENCIAS DEL MERCADO.",
+      description: "Nos encargamos de equipar tu propiedad siguiendo las últimas tendencias del mercado.",
     },
     {
       icon: `
@@ -130,49 +130,49 @@ export const carouselObject= [
         </svg>
       `,
       title: "Publicaciones",
-      description: "NOS OCUPAMOS DE CREAR LOS ANUNCIOS EN TRES IDIOMAS EN TODOS LOS PORTALES DE ALQUILER TEMPORARIO, ADEMAS DE NUESTRO SITIO WEB.",
+      description: "Nos ocupamos de crear los anuncios en tres idiomas en todos los portales de alquiler temporario, además de nuestro sitio web.",
    },
        {
       icon: `
        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" width="80" height="40"><path d="M10.5 8.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path><path d="M2 4a2 2 0 00-2 2v6a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1.172a2 2 0 01-1.414-.586l-.828-.828A2 2 0 009.172 2H6.828a2 2 0 00-1.414.586l-.828.828A2 2 0 013.172 4H2zm.5 2a.5.5 0 110-1 .5.5 0 010 1zm9 2.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z"></path></svg>
       `,
       title: "Fotografía",
-      description: "CONTAMOS CON NUESTRO PROPIO EQUIPO DE FOTÓGRAFOS, LISTOS PARA MOSTRAR CADA RINCÓN DE SU PROPIEDAD.",
+      description: "Contamos con nuestro propio equipo de fotógrafos, listos para mostrar cada rincón de su propiedad.",
    },
              {
       icon: `
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="40"><path fill="none" d="M0 0h24v24H0z"></path><path d="M8 18h10.237L20 19.385V9h1a1 1 0 011 1v13.5L17.545 20H9a1 1 0 01-1-1v-1zm-2.545-2L1 19.5V4a1 1 0 011-1h15a1 1 0 011 1v12H5.455z"></path></svg>
       `,
       title: "Reservas y Solicitudes",
-      description: "CONTESTAMOS TODAS LAS SOLICITUDES DE RESERVA EN UN PROMEDIO MENOR A 5 MINUTOS, 7 DÍAS A LA SEMANA.",
+      description: "Contestamos todas las solicitudes de reserva en un promedio menor a 5 minutos, 7 días a la semana.",
    },
                           {
       icon: `
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="80" height="40"><path d="M235.6 160H84.37c-33.1 0-60.74 25.2-63.74 58.2L.27 442.2c-3.409 37.5 26.1 69.8 63.74 69.8h191.1c37.63 0 67.14-32.31 63.74-69.79l-20.36-224C296.4 185.2 268.7 160 235.6 160zm-76.5 256c-34.4 0-63.1-26.3-63.1-58.7 0-25 38.08-75.47 55.5-97.27 4.25-5.312 12.75-5.312 17 0C185.9 281.8 224 332.3 224 357.3c0 32.4-28.7 58.7-64.9 58.7zM379.3 94.06l-43.32-43.32C323.1 38.74 307.7 32 290.8 32h-66.75c0-17.67-14.33-32-32-32H127.1c-17.67 0-32 14.33-32 32l.9 96h128V96h66.75l43.31 43.31c6.248 6.248 16.38 6.248 22.63 0l22.62-22.62c6.29-6.29 6.29-16.39-.01-22.63z"></path></svg>
       `,
       title: "Limpieza",
-      description: "EQUIPO DE LIMPIEZA PROFESIONAL DISTRIBUIDO POR ZONAS PARA QUE TRABAJEN SIEMPRE EN LAS MISMAS PROPIEDADES.",
+      description: "Equipo de limpieza profesional distribuido por zonas para que trabajen siempre en las mismas propiedades.",
    },
                                                    {
       icon: `
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="80" height="40"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"></path></svg>
       `,
       title: "Mantenimiento",
-      description: "AMPLIO EQUIPO DE MANTENIMIENTO DISPONIBLE 24/7 PARA RESOLVER CUALQUIER TIPO DE EVENTUALIDAD QUE PUDIERA SURGIR",
+      description: "Amplio equipo de mantenimiento disponible 24/7 para resolver cualquier tipo de eventualidad que pudiera surgir.",
    },
                                                                             {
       icon: `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="80" height="40"><path d="M160 32v32h128V32c0-17.67 14.3-32 32-32s32 14.33 32 32v32h48c26.5 0 48 21.49 48 48v48H0v-48c0-26.51 21.49-48 48-48h48V32c0-17.67 14.3-32 32-32s32 14.33 32 32zM0 192h448v272c0 26.5-21.5 48-48 48H48c-26.51 0-48-21.5-48-48V192zm328.1 112.1c10.2-8.5 10.2-23.7 0-33.1-8.5-9.3-23.7-9.3-33.1 0l-95 95.1-47.9-47.1c-8.5-9.3-23.7-9.3-33.1 0-9.3 9.4-9.3 24.6 0 33.1l64 64c9.4 10.2 24.6 10.2 33.1 0l112-112z"></path></svg>
       `,
       title: "Check in/Check out",
-      description: "COORDINAMOS LOS INGRESOS Y LAS SALIDAS CON DISPONIBILIDAD 24 HORAS.",
+      description: "Coordinamos los ingresos y las salidas con disponibilidad 24 horas.",
    },
                                                                                                      {
       icon: `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="80" height="40"><path d="M336 64h-53.88C268.9 26.8 233.7 0 192 0s-76.9 26.8-90.1 64H48C21.5 64 0 85.48 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.48 48-48V112c0-26.52-21.5-48-48-48zM96 392c-13.25 0-24-10.75-24-24s10.75-24 24-24 24 10.75 24 24-10.7 24-24 24zm0-96c-13.25 0-24-10.75-24-24s10.75-24 24-24 24 10.8 24 24-10.7 24-24 24zm96-232c17.67 0 32 14.33 32 32s-14.33 32-32 32-32-14.3-32-32c0-17.67 14.3-32 32-32zm112 320H176c-8.8 0-16-7.2-16-16s7.2-16 16-16h128c8.801 0 16 7.199 16 16 0 8.8-7.2 16-16 16zm0-96H176c-8.8 0-16-7.2-16-16s7.2-16 16-16h128c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path></svg>
       `,
       title: "Inventario, Reclamos y Reposiciones",
-      description: "NOS ENCARGAMOS DE MANTENER TU INVENTARIO AL DÍA, ASÍ COMO DE RECLAMAR, COBRAR Y REPONER TODOS LOS FALTANTES.",
+      description: "Nos encargamos de mantener tu inventario al día así como de reclamar cobrar y reponer todos los faltantes.",
     },
     // Agrega más objetos aquí para más tarjetas si es necesario
   ];

@@ -129,7 +129,7 @@ function PublishForm() {
           rows={4}
           className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-500 focus:border-gray-500 "
         ></textarea>
-        <label htmlFor="amenidades" className="block mb-2 text-sm font-medium text-gray-900 ">
+        <label htmlFor="amenidades" className="block mb-2 text-sm font-medium text-gray-900 pt-2">
           Amenidades de la propiedad
         </label>
       </div>

@@ -62,9 +62,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ isOpen, toggleMenu, handleOpenM
               </button>
             </div>
           ) : (
-            <>
-              <ButtonSignIn handleOpenModal={handleOpenModal} />
-            </>
+            <ButtonSignIn handleOpenModal={handleOpenModal} />
           )}
         </div>
         <ul className="flex flex-col">
@@ -79,7 +77,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ isOpen, toggleMenu, handleOpenM
             </Link>
           </li>
           <li className={liclass}>
-            <Link href="#experiencias" onClick={(e) => handleNavItemClick(e, "Experiencias")}>
+            <Link href="/experiencias" onClick={(e) => handleNavItemClick(e, "Experiencias")}>
               Experiencias
             </Link>
           </li>
@@ -89,7 +87,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ isOpen, toggleMenu, handleOpenM
             </Link>
           </li>
           <li className={liclass}>
-            <Link href="#tutoriales" onClick={(e) => handleNavItemClick(e, "Contacto")}>
+            <Link href="/contacto" onClick={(e) => handleNavItemClick(e, "Contacto")}>
               Contacto
             </Link>
           </li>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import rosario from "@/public/assets/rosario-turismo.webp";
 import wsp from "@/public/assets/logowsp.png";
-import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
+
 
 const Experiencias = () => {
   return (
@@ -16,7 +16,7 @@ const Experiencias = () => {
           height={0}
           src={rosario}
           alt="Rosario"
-          className="w-screen h-[700px] object-cover -p-8 -mt-28 z-20 brightness-100 fadeIn"
+          className="w-screen h-[700px] object-cover -p-8 -mt-28 z-20 brightness-100 fadeIn  animate-fadeInUp"
         />
       </div>
 
@@ -133,4 +133,4 @@ const Experiencias = () => {
   );
 };
 
-export default withGoogleAnalytics(Experiencias);
+export default Experiencias;

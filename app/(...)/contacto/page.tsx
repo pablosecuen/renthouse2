@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "sonner";
-import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
+
 
 function Contacto() {
   const [formData, setFormData] = useState({
@@ -36,11 +36,24 @@ function Contacto() {
   };
 
   return (
-    <div className=" max-w-5xl flex flex-col items-center py-32 mx-auto ">
+    <div className=" max-w-5xl flex flex-col items-center md:py-32 py-20 mx-auto p-10 md:p-0">
+      <div id="nosotros">
+        <h3 className="uppercase tracking-widest py-4 text-2xl font-semibold">SOBRE NOSOTROS</h3>
+        <p className="pb-20">
+          Especializados en el alquiler temporario, Rent House ofrece 12 años de experiencia y
+          gestiona más de 30 locaciones en Rosario y Buenos Aires. Nos enfocamos en maximizar tus
+          ingresos a través de un servicio integral: equipamiento de vanguardia, anuncios trilingües
+          en portales de alquiler temporario, fotografía profesional, respuesta rápida a reservas,
+          limpieza y mantenimiento 24/7, y coordinación eficiente de check-in/check-out. Gestionamos
+          inventarios y reclamos, y proporcionamos variadas opciones de pago para rentas. Agrega tu
+          propiedad hoy y disfruta de una gestión sin complicaciones.
+        </p>
+      </div>
+
       <h3 className="uppercase tracking-widest py-4 text-2xl font-semibold">
         FORMULARIO DE CONTACTO
       </h3>
-      <form className="w-full text-black" onSubmit={handleSubmit}>
+      <form id="contact" className="w-full text-black" onSubmit={handleSubmit}>
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="email"
@@ -142,4 +155,4 @@ function Contacto() {
   );
 }
 
-export default withGoogleAnalytics(Contacto);
+export default Contacto;

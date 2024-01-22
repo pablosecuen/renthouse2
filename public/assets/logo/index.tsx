@@ -2,9 +2,10 @@ import React from "react";
 import logo from "./Logo.svg";
 import logoblanco from "./Logo_Blanco.png";
 import Image from "next/legacy/image";
+import Link from "next/link";
 
 type LogoProps = {
-  size: "sm" | "md" | "lg" | "xl"; // Tamaños disponibles para el logo
+  size: "sm" | "md" | "lg" | "xl";
   color?: string;
 };
 
@@ -13,7 +14,6 @@ const Logo: React.FC<LogoProps> = ({ size, color }) => {
   let height = 0;
   let logoSrc = logo;
 
-  // Asignar ancho y alto basado en el tamaño proporcionado
   switch (size) {
     case "sm":
       width = 50;
@@ -35,9 +35,8 @@ const Logo: React.FC<LogoProps> = ({ size, color }) => {
       break;
   }
 
-  // Verificar si se debe cambiar el logo por el logo blanco
   if (color && color.toLowerCase() === "blanco") {
-    logoSrc = logoblanco; // Cambiar el logo a la versión blanca
+    logoSrc = logoblanco;
   }
 
   return (

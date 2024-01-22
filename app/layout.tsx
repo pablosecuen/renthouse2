@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import Footer from "./layout/footer";
 import Link from "next/link";
 import { SessionProviders } from "./context/SessionProvider";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "Rent House",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="overflow-x-hidden bg-white">
+        <GoogleAnalytics />
         <SessionProviders>
           <Navbar />
           {children}

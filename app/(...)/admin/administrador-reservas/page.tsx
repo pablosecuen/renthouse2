@@ -7,7 +7,6 @@ import usePropiedades from "@/app/hooks/usePropiedades";
 import PropertyAdmin from "./components/property-admin";
 import DeleteReservation from "./components/delete-reservation";
 import AddReservation from "./components/add-reservation";
-import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
 
 function ReservationAdministrator() {
   const arrProperties = usePropiedades();
@@ -81,4 +80,4 @@ function ReservationAdministrator() {
   );
 }
 
-export default withGoogleAnalytics(ReservationAdministrator);
+export default ReservationAdministrator;

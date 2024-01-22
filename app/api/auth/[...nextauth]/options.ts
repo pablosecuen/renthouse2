@@ -16,7 +16,7 @@ export const options: NextAuthOptions = {
                     name: profile.name as string,
                     lastName: profile.family_name as string,
                     firstName: profile.given_name as string,
-                    phone: profile.phone ? profile.phone as string : '', // Comprueba si phone está presente
+                    phone: profile.phone ? profile.phone as string : '',
                     image: profile.picture as string,
                 }
               },
@@ -36,9 +36,6 @@ export const options: NextAuthOptions = {
                 }
             },
             async authorize(credentials) {
-                // This is where you need to retrieve user data 
-                // to verify with credentials
-                // Docs: https://next-auth.js.org/configuration/providers/credentials
                 const user = { id: "42", name: "Dave", password: "nextauth" }
 
                 if (credentials?.username === user.name && credentials?.password === user.password) {

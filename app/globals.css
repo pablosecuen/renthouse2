@@ -10,3 +10,14 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
 }
+
+* {
+  scroll-behavior: smooth !important;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400; /* Puedes ajustar esto según el estilo que desees, por ejemplo, 400 para Regular */
+  src: url("/assets/fonts/Work Sans/static/WorkSans-Regular.ttf") format("truetype");
+}

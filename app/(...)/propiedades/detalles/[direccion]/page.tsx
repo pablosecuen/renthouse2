@@ -9,7 +9,7 @@ import PropertyCalendar from "@/app/components/calendar";
 import usePropiedades from "@/app/hooks/usePropiedades";
 import { Propiedad } from "@/app/types/types";
 import FotosModal from "@/app/components/modals/fotos-modal";
-import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
+import { withGoogleAnalytics } from "@/app/GoogleAnalytics";
 
 function Detalles({ params }: { params: { direccion: string } }) {
   const propiedades = usePropiedades();

@@ -4,13 +4,12 @@ import Filters from "@/app/components/form/filters";
 import SearchForm from "@/app/components/form/search-form";
 import usePropiedades from "@/app/hooks/usePropiedades";
 import { Propiedad } from "@/app/types/types";
-import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
+
 import React, { useState } from "react";
 
 function Propiedades() {
   const [selectedPropiedad, setSelectedPropiedad] = useState<Propiedad>();
   const [showmap, setShowMap] = useState(true);
-  console.log(selectedPropiedad);
 
   const propiedades = usePropiedades();
 
@@ -60,4 +59,4 @@ function Propiedades() {
   );
 }
 
-export default withGoogleAnalytics(Propiedades);
+export default Propiedades;

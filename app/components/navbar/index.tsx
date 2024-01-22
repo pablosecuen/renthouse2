@@ -102,7 +102,9 @@ const Navbar: React.FC = () => {
               </Link>
             </div>
             <div className="md:hidden block md:w-1/3">
-              <Logo size="md" color="blanco" />
+              <Link href="/">
+                <Logo size="md" color="blanco" />
+              </Link>
             </div>
           </>
         ) : (
@@ -113,7 +115,9 @@ const Navbar: React.FC = () => {
               </Link>
             </div>
             <div className="md:hidden block md:w-1/3">
-              <Logo size="md" />
+              <Link href="/">
+                <Logo size="md" />
+              </Link>
             </div>
           </>
         )}

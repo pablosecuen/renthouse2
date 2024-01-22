@@ -26,6 +26,6 @@
       "./types" // Añade esta línea para incluir la carpeta types
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["app/types/next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/gtag.js"],
   "exclude": ["node_modules"]
 }

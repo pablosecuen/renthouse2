@@ -3,7 +3,6 @@ import React from "react";
 import FeedBack from "./layout/feedback";
 import Landing from "./layout/landing";
 import Soon from "./layout/soon";
-import { withGoogleAnalytics } from "./withGoogleAnalytics";
 
 const Home: React.FC = () => {
   return (
@@ -15,4 +14,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default withGoogleAnalytics(Home);
+export default Home;

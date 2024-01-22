@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { handleLogin, handleLogout } from "@/app/firebase";
 import { Toaster, toast } from "sonner";
 import Logo from "@/public/assets/logo";
-import { withGoogleAnalytics } from "@/app/withGoogleAnalytics";
+
 
 function Admin() {
   const router = useRouter();
@@ -83,4 +83,4 @@ function Admin() {
   );
 }
 
-export default withGoogleAnalytics(Admin);
+export default Admin;
