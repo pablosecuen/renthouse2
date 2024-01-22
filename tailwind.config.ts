@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+         fontFamily: {
+        'sans': ['Work Sans', 'sans-serif'],
+      },
       backgroundImage: {
         'francia': "url('/assets/francia/carouselfrancia.jpg')",
         'quebracho': "url('/assets/quebracho/carouselquebracho.jpg')",
