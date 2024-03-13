@@ -138,7 +138,7 @@ const Navbar: React.FC = () => {
               ref={menuRef}
             >
               <div className="w-12 flex items-center">
-                <Image
+                {/*  <Image
                   alt="User profile image"
                   width={50}
                   height={50}
@@ -164,12 +164,12 @@ const Navbar: React.FC = () => {
                       Logout
                     </button>
                   </div>
-                )}
+                )} */}
               </div>
             </div>
           ) : (
             <div className="hidden md:block">
-              <ButtonSignIn handleOpenModal={handleOpenModal} />
+              {/*     <ButtonSignIn handleOpenModal={handleOpenModal} /> */}
             </div>
           )}
         </div>
