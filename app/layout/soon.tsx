@@ -12,7 +12,7 @@ function Soon() {
         </svg>
       </div>
       <h2 className="text-center tracking-widest text-3xl">Disponible en fechas proximas</h2>
-      <div className="w-full flex justify-center py-10 ">
+      <div className="w-full flex justify-center py-10 max-w-screen-2xl ">
         <CardContainer propiedades={propiedades} />
       </div>
     </div>
